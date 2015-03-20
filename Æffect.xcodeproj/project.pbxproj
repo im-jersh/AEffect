@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D381ABCE181001B3736 /* AppDelegate.swift */; };
-		03E83D3B1ABCE181001B3736 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D3A1ABCE181001B3736 /* ViewController.swift */; };
 		03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3C1ABCE181001B3736 /* Main.storyboard */; };
 		03E83D401ABCE181001B3736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3F1ABCE181001B3736 /* Images.xcassets */; };
 		03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D411ABCE181001B3736 /* LaunchScreen.xib */; };
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
+		03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		03E83D331ABCE181001B3736 /* Æffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Æffect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D371ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D381ABCE181001B3736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03E83D3A1ABCE181001B3736 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03E83D3D1ABCE181001B3736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03E83D3F1ABCE181001B3736 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03E83D421ABCE181001B3736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		03E83D481ABCE181001B3736 /* ÆffectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ÆffectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D4D1ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
+		03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESelectEmotionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +77,9 @@
 		03E83D351ABCE181001B3736 /* Æffect */ = {
 			isa = PBXGroup;
 			children = (
-				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
-				03E83D3A1ABCE181001B3736 /* ViewController.swift */,
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
+				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
+				03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */,
 				03E83D3F1ABCE181001B3736 /* Images.xcassets */,
 				03E83D411ABCE181001B3736 /* LaunchScreen.xib */,
 				03E83D361ABCE181001B3736 /* Supporting Files */,
@@ -156,6 +156,7 @@
 		03E83D2B1ABCE180001B3736 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "Æ";
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Josh O'Steen";
 				TargetAttributes = {
@@ -212,8 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E83D3B1ABCE181001B3736 /* ViewController.swift in Sources */,
 				03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */,
+				03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
