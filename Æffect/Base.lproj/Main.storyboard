@@ -26,11 +26,11 @@
                                                 <constraint firstAttribute="width" constant="24" id="per-CH-oxX"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
                                             <rect key="frame" x="16" y="1" width="584" height="247"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-pg-YbX">
-                                            <rect key="frame" x="38" y="193" width="538" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing multiple line headline and how the UILabel will stretch to accomodate a really long headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-pg-YbX">
+                                            <rect key="frame" x="24" y="167" width="568" height="52"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -40,9 +40,9 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="-8" id="0kM-wA-Wak"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="zCe-wQ-Irl" secondAttribute="bottom" constant="-7" id="Ccw-js-wid"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="iH8-xi-96a" secondAttribute="bottom" constant="-7" id="ELy-e9-AZF"/>
-                                        <constraint firstItem="Que-pg-YbX" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="22" id="Eg3-DN-Qr3"/>
+                                        <constraint firstItem="Que-pg-YbX" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="8" id="Eg3-DN-Qr3"/>
                                         <constraint firstItem="zCe-wQ-Irl" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="-7" id="Jz9-UL-Ebc"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Que-pg-YbX" secondAttribute="trailing" constant="16" id="QOX-cv-ThI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Que-pg-YbX" secondAttribute="trailing" id="QOX-cv-ThI"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Que-pg-YbX" secondAttribute="bottom" constant="22" id="ZmF-8O-6Mr"/>
                                         <constraint firstItem="Que-pg-YbX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="22" id="kEI-AI-kOr"/>
                                         <constraint firstItem="iH8-xi-96a" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" id="q7p-jB-i5C"/>
