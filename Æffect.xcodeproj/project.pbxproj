@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03635AAB1ABDF7F700ECE937 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635AAA1ABDF7F700ECE937 /* test.png */; };
 		03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D381ABCE181001B3736 /* AppDelegate.swift */; };
 		03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3C1ABCE181001B3736 /* Main.storyboard */; };
 		03E83D401ABCE181001B3736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3F1ABCE181001B3736 /* Images.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03635AAA1ABDF7F700ECE937 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		03E83D331ABCE181001B3736 /* Æffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Æffect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D371ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D381ABCE181001B3736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
 				03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */,
 				03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */,
+				03635AAA1ABDF7F700ECE937 /* test.png */,
 				03E83D3F1ABCE181001B3736 /* Images.xcassets */,
 				03E83D411ABCE181001B3736 /* LaunchScreen.xib */,
 				03E83D361ABCE181001B3736 /* Supporting Files */,
@@ -199,6 +202,7 @@
 				03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
 				03E83D401ABCE181001B3736 /* Images.xcassets in Resources */,
+				03635AAB1ABDF7F700ECE937 /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 				03E83D541ABCE181001B3736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03E83D551ABCE181001B3736 /* Build configuration list for PBXNativeTarget "ÆffectTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				03E83D571ABCE181001B3736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
