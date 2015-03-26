@@ -9,35 +9,38 @@
         <scene sceneID="0Kk-Dt-7na">
             <objects>
                 <tableViewController storyboardIdentifier="SelectEmotion" title="selectEmotion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qzj-tE-eo9" customClass="AESelectEmotionTableViewController" customModule="Æffect" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="22" sectionFooterHeight="22" id="UOe-YL-hZ5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="204" sectionHeaderHeight="22" sectionFooterHeight="22" id="UOe-YL-hZ5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="article" selectionStyle="default" indentationWidth="10" reuseIdentifier="article" rowHeight="250" id="oQY-5L-2h4" customClass="AETableViewCell" customModule="Æffect" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="article" selectionStyle="default" indentationWidth="10" reuseIdentifier="article" rowHeight="204" id="oQY-5L-2h4" customClass="AETableViewCell" customModule="Æffect" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQY-5L-2h4" id="ANl-3p-hbX">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-wQ-Irl">
-                                            <rect key="frame" x="-8" y="1" width="24" height="247"/>
-                                            <color key="backgroundColor" red="0.52941176470588236" green="0.9882352941176471" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="-8" y="1" width="12" height="201"/>
+                                            <color key="backgroundColor" red="0.46666666666666667" green="0.74901960784313726" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="per-CH-oxX"/>
+                                                <constraint firstAttribute="width" constant="12" id="per-CH-oxX"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
-                                            <rect key="frame" x="16" y="1" width="584" height="247"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
+                                            <rect key="frame" x="4" y="1" width="604" height="201"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing multiple line headline and how the UILabel will stretch to accomodate a really long headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-pg-YbX">
-                                            <rect key="frame" x="24" y="167" width="568" height="52"/>
+                                            <rect key="frame" x="12" y="121" width="580" height="52"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="-8" id="0kM-wA-Wak"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="-16" id="0kM-wA-Wak"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="zCe-wQ-Irl" secondAttribute="bottom" constant="-7" id="Ccw-js-wid"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="iH8-xi-96a" secondAttribute="bottom" constant="-7" id="ELy-e9-AZF"/>
                                         <constraint firstItem="Que-pg-YbX" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="8" id="Eg3-DN-Qr3"/>
@@ -74,10 +77,9 @@
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ydV-9L-KCW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mQU-c2-DXk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mQU-c2-DXk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

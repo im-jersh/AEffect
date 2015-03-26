@@ -11,6 +11,17 @@ import UIKit
 class AESelectEmotionTableViewController: UITableViewController {
     
     
+    let testData = [
+        ["headline" : "Elon Musk Says Self-Driving Tesla Cars Will Be in the U.S. by Summer", "featuredImage" : "tesla.png"],
+        ["headline" : "Hackers Attack GreatFire.org, a Workaround for Websites Censored in China", "featuredImage" : "hackers.png"],
+        ["headline" : "$10 Million Settlement in Target Data Breach Gets Preliminary Approval", "featuredImage" : "target.png"],
+        ["headline" : "A Sucker Is Optimized Every Minute", "featuredImage" : "sucker.png"],
+        ["headline" : "Suddenly, Plenty of Options for Cord Cutters", "featuredImage" : "cord-cutters.png"],
+        ["headline" : "Facebook Announces a Payments Feature for Its Messenger App", "featuredImage" : "facebook.png"],
+        ["headline" : "Capturing the Night in Digital Photos, Spectacularly", "featuredImage" : "night.png"],
+        ["headline" : "Managers Turn to Computer Games, Aiming for More Efficient Employees", "featuredImage" : "manager.png"]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +33,22 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         // make cell separator lines clear
         self.tableView.separatorColor = UIColor.clearColor()
+        
+        // add emotion menu to view
+        let emotions = ["Joy", "Surprise", "Sadness", "Disgust", "Anger", "Fear"]
+        var emotionMenu = KOMenuView(item: emotions, itemHeight: 54.0, withPlaceView: self.view, withClickByIndex: { (itemIndex) -> Void in
+                println("itemIndex:\(itemIndex)")
+        })
+        
+        // fold menu automatically
+        emotionMenu.foldMenuWhenClickItem = true
+        emotionMenu.animaDuration = 0.6
+        
+        // add to view
+        self.navigationController?.view.addSubview(emotionMenu)
+        
+        // change tableView background view
+        self.tableView.backgroundColor = UIColor.darkGrayColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +72,16 @@ class AESelectEmotionTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as! AETableViewCell
 
+        let cellData = testData[indexPath.row]
+        
+        
         // Configure the cell...
+        let img = UIImage(named: cellData["featuredImage"]!)
+        cell.clipsToBounds = true;
+        cell.featuredImage.image = img
+        cell.headline.text = cellData["headline"]!
 
         return cell
     }
