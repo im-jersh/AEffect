@@ -32,7 +32,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // make cell separator lines clear
-        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.separatorColor = UIColor.grayColor()
         
         // change tableView background view
         self.tableView.backgroundColor = UIColor.whiteColor()
@@ -61,7 +61,7 @@ class AESelectEmotionTableViewController: UITableViewController {
     func createHomeButtonView() -> UILabel {
         
         var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        label.text = "Tap"
+        label.text = "Æ"
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
