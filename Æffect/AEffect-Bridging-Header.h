@@ -9,6 +9,6 @@
 #ifndef _ffect_AEffect_Bridging_Header_h
 #define _ffect_AEffect_Bridging_Header_h
 
-#import "KOMenuView.h"
+#import "DWBubbleMenuButton.h"
 
 #endif
