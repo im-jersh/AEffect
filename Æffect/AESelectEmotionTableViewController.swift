@@ -46,7 +46,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         upBubbleMenu.homeButtonView = bubbleMenu
         upBubbleMenu.addButtons(self.createButtons())
         
-        
+        self.navigationController?.view.addSubview(upBubbleMenu)
         
     }
     
@@ -60,12 +60,12 @@ class AESelectEmotionTableViewController: UITableViewController {
     // Create main menu button
     func createHomeButtonView() -> UILabel {
         
-        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 40.0, 40.0))
+        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
         label.text = "Tap"
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
-        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
         label.clipsToBounds = true
         
         return label
@@ -77,18 +77,18 @@ class AESelectEmotionTableViewController: UITableViewController {
         var buttons : Array<UIButton> = Array()
         var tag = 0
         
-        for buttonTitle in ["Joy", "Surprise", "Sadness", "Disgust", "Anger", "Fear"] {
+        for buttonTitle in ["😄", "😳", "😢", "😒", "😠", "😖"] {
             var button : UIButton = UIButton()
             button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             button.setTitle(buttonTitle, forState: UIControlState.Normal)
             
-            button.frame = CGRectMake(0.0, 0.0, 30.0, 30.0)
+            button.frame = CGRectMake(0.0, 0.0, 40.0, 40.0)
             button.layer.cornerRadius = button.frame.size.height / 2.0
-            button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
             button.clipsToBounds = true
             button.tag = tag++
             
-            button.addTarget(self, action: "buttonSelected", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "buttonSelected:", forControlEvents: UIControlEvents.TouchUpInside)
             
             buttons.append(button)
         }
