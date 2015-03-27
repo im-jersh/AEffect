@@ -35,7 +35,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         self.tableView.separatorColor = UIColor.clearColor()
         
         // change tableView background view
-        self.tableView.backgroundColor = UIColor.darkGrayColor()
+        self.tableView.backgroundColor = UIColor.whiteColor()
         
         
         // add bottom bubble menu
@@ -65,7 +65,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
-        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
         label.clipsToBounds = true
         
         return label
@@ -84,7 +84,40 @@ class AESelectEmotionTableViewController: UITableViewController {
             
             button.frame = CGRectMake(0.0, 0.0, 40.0, 40.0)
             button.layer.cornerRadius = button.frame.size.height / 2.0
-            button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+
+            var bgColor : UIColor
+            if (buttonTitle == "😄") {
+                // yellow
+                // bgColor = [UIColor colorWithRed:0.925f green:0.776f blue:0.184f alpha:0.5f];
+                bgColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+            } else if (buttonTitle == "😳") {
+                // green
+                // bgColor = [UIColor colorWithRed:0.467f green:0.749f blue:0.173f alpha:0.5f];
+                bgColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+            } else if (buttonTitle == "😢") {
+                // blue
+                // bgColor = [UIColor colorWithRed:0.039f green:0.510f blue:0.663f alpha:0.5f];
+                bgColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+            } else if (buttonTitle == "😒") {
+                // purple
+                // bgColor = [UIColor colorWithRed:0.494f green:0.298f blue:0.631f alpha:0.5f];
+                bgColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+            } else if (buttonTitle == "😠") {
+                // orange
+                // bgColor = [UIColor colorWithRed:0.914f green:0.439f blue:0.118f alpha:0.5f];
+                bgColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+            } else if (buttonTitle == "😖") {
+                // red
+                // bgColor = [UIColor colorWithRed:0.871f green:0.000f blue:0.286f alpha:0.5f];
+                bgColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+            } else {
+                // bgColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+                bgColor = UIColor.blackColor()
+            }
+            
+            //button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+            button.backgroundColor = bgColor
+            
             button.clipsToBounds = true
             button.tag = tag++
             
