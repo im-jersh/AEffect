@@ -143,22 +143,22 @@ static const CGFloat expandHeight = 30.f;
         UIColor *bgColor = NULL;
         if ([itemName  isEqualToString: @"Joy"]) {
             // yellow
-            bgColor = [UIColor colorWithRed:0.925f green:0.776f blue:0.184f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.925f green:0.776f blue:0.184f alpha:0.5f];
         } else if ([itemName isEqualToString:@"Surprise"]) {
             // green
-            bgColor = [UIColor colorWithRed:0.467f green:0.749f blue:0.173f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.467f green:0.749f blue:0.173f alpha:0.5f];
         } else if ([itemName isEqualToString:@"Sadness"]) {
             // blue
-            bgColor = [UIColor colorWithRed:0.039f green:0.510f blue:0.663f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.039f green:0.510f blue:0.663f alpha:0.5f];
         } else if ([itemName isEqualToString:@"Disgust"]) {
             // purple
-            bgColor = [UIColor colorWithRed:0.494f green:0.298f blue:0.631f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.494f green:0.298f blue:0.631f alpha:0.5f];
         } else if ([itemName isEqualToString:@"Fear"]) {
             // orange
-            bgColor = [UIColor colorWithRed:0.914f green:0.439f blue:0.118f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.914f green:0.439f blue:0.118f alpha:0.5f];
         } else if ([itemName isEqualToString:@"Anger"]) {
             // red
-            bgColor = [UIColor colorWithRed:0.871f green:0.000f blue:0.286f alpha:1.00f];
+            bgColor = [UIColor colorWithRed:0.871f green:0.000f blue:0.286f alpha:0.5f];
         } else {
             bgColor = [UIColor colorWithWhite:0.0 alpha:0.3];
         }
