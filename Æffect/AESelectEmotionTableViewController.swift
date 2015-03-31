@@ -33,7 +33,6 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         // make cell separator lines clear
         self.tableView.separatorColor = UIColor.grayColor()
-        
         // change tableView background view
         self.tableView.backgroundColor = UIColor.whiteColor()
         
@@ -45,6 +44,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         upBubbleMenu.homeButtonView = bubbleMenu
         upBubbleMenu.addButtons(self.createButtons())
+        upBubbleMenu.tag = 37
         
         self.navigationController?.view.addSubview(upBubbleMenu)
         
@@ -62,6 +62,20 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
         label.text = "Æ"
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.layer.cornerRadius = label.frame.size.height / 2.0
+        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
+        label.clipsToBounds = true
+        
+        return label
+    }
+    
+    // Create main menu button
+    func createHomeButtonViewFromText(text: String) -> UILabel {
+        
+        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
+        label.text = text
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
@@ -131,7 +145,18 @@ class AESelectEmotionTableViewController: UITableViewController {
     
     // Target method for select submenu button
     func buttonSelected(sender: UIButton) {
+        
+        // DEBUG
         println("Button tapped, tag: \(sender.tag)")
+        
+        // change menu label text to match selection
+        for subview in self.navigationController!.view.subviews as! [UIView] {
+            if var mainButton = subview as? DWBubbleMenuButton {
+                mainButton.homeButtonView = self.createHomeButtonViewFromText(sender.titleLabel!.text!)
+                self.navigationController?.view.addSubview(mainButton)
+            }
+        }
+        
     }
     
     
