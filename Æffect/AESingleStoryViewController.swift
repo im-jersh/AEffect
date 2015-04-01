@@ -11,26 +11,23 @@ import UIKit
 class AESingleStoryViewController: UIViewController {
 
     var headLine = ""
-    var image = UIImage?()
-
+    var image = ""
+    var newsStory = ""
+    //var indexNews : Int = 0
     
     @IBOutlet var newsContent: UILabel!
     
     //@IBOutlet var newsImage: UIImageView!
     
+    override func viewDidAppear(animated: Bool) {
+        
+        newsContent.text = newsStory
+        
+        println(image)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsContent.text = headLine
-        println(headLine)
-        println("1")
-
-     //   self.newsImage.image = UIImage(named: image)
-      //  self.newsImage.layer.cornerRadius = self.newsImage.frame.width / 2
-      //  self.newsImage.layer.masksToBounds = true
-      //  self.newsImage.layer.borderWidth = 2
-      //  self.newsImage.layer.borderColor = UIColor.blackColor().CGColor
-        
-        
     }
 
    
