@@ -39,7 +39,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         
         // add bottom bubble menu
-        var bubbleMenu = self.createHomeButtonView()
+        var bubbleMenu = self.createHomeButtonView(99)
         
         var upBubbleMenu : DWBubbleMenuButton = DWBubbleMenuButton(frame: CGRectMake(self.view.frame.size.width - bubbleMenu.frame.size.width - 20.0, self.view.frame.size.height - bubbleMenu.frame.size.height - 20.0, bubbleMenu.frame.size.width, bubbleMenu.frame.size.height), expansionDirection: .DirectionUp)
         
@@ -50,18 +50,21 @@ class AESelectEmotionTableViewController: UITableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    // MARK: DWBubbleMenuButton helper methods
+    // Target method for select submenu button
+    func buttonSelected(sender: UIButton) {
+        println("Button tapped, tag: \(sender.tag)")
+    }
+
     
     // Create main menu button
-    func createHomeButtonView() -> UILabel {
+    func createHomeButtonView(inputemotion: Int) -> UILabel {
         
         var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        label.text = "Æ"
+        if (inputemotion == 99) {
+            label.text = "Æ"
+        }
+        
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
@@ -129,11 +132,6 @@ class AESelectEmotionTableViewController: UITableViewController {
         return buttons
     }
     
-    // Target method for select submenu button
-    func buttonSelected(sender: UIButton) {
-        println("Button tapped, tag: \(sender.tag)")
-    }
-    
     
     // MARK: - Table view data source
     
@@ -146,12 +144,12 @@ class AESelectEmotionTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 8
+        return testData.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as! AETableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as AETableViewCell
         
         let cellData = testData[indexPath.row]
         
@@ -165,6 +163,35 @@ class AESelectEmotionTableViewController: UITableViewController {
         return cell
     }
     
+    var newsHeadLine = ""
+    var newsImage = UIImage?()
+    /*
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cellData = testData[indexPath.row]
+        
+        newsHeadLine = cellData["headline"]!
+        newsImage = UIImage(named: cellData["featuredImage"]!)
+    }
+    */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showNewsStory" {
+            if let destination = segue.destinationViewController as? AESingleStoryViewController {
+                if let newsIndex = tableView.indexPathForSelectedRow()?.row {
+                    
+                    //let cellData = testData[indexPath.row]
+                    //destination.headLine = newsIndex["headline"]!
+                    //destination.image = newsImage
+                
+                    println(newsHeadLine)
+                    println(newsImage)
+
+                }
+            }
+        }
+    }
     
     /*
     // Override to support conditional editing of the table view.

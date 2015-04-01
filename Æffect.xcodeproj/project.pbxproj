@@ -24,6 +24,7 @@
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
 		03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */; };
 		03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */; };
+		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
 		03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESelectEmotionTableViewController.swift; sourceTree = "<group>"; };
 		03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AETableViewCell.swift; path = ../AETableViewCell.swift; sourceTree = "<group>"; };
+		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
 				03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */,
+				13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */,
 				03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */,
 				03635AB81ABE093300ECE937 /* AEffect-Bridging-Header.h */,
 				0383C63B1AC4FFD400B27904 /* DWBubbleMenu */,
@@ -278,6 +281,7 @@
 			files = (
 				03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */,
 				03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */,
+				13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */,
 				03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
 			);
