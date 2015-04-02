@@ -224,6 +224,54 @@ class AESelectEmotionTableViewController: UITableViewController {
     }
     }
     */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        /*if editingStyle == .Delete {
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }*/
+    }
+
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+        // 1
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 2
+            let shareMenu = UIAlertController(title: nil, message: "Remoove From current List", preferredStyle: .ActionSheet)
+            
+            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+        })
+        
+        shareAction.backgroundColor = UIColor.redColor()
+        // 3
+        var rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add to List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 4
+            let rateMenu = UIAlertController(title: nil, message: "Add to your reading list", preferredStyle: .ActionSheet)
+            
+            let appRateAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            rateMenu.addAction(appRateAction)
+            rateMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(rateMenu, animated: true, completion: nil)
+        })
+        // 5
+        rateAction.backgroundColor = UIColor.blueColor()
+        return [shareAction,rateAction]
+    }
+    
+
     
     /*
     // Override to support rearranging the table view.
