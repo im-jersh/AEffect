@@ -42,8 +42,8 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         var upBubbleMenu : DWBubbleMenuButton = DWBubbleMenuButton(frame: CGRectMake(self.view.frame.size.width - bubbleMenu.frame.size.width - 20.0, self.view.frame.size.height - bubbleMenu.frame.size.height - 20.0, bubbleMenu.frame.size.width, bubbleMenu.frame.size.height), expansionDirection: .DirectionUp)
         
-        upBubbleMenu.homeButtonView = bubbleMenu
-        upBubbleMenu.addButtons(self.createButtons())
+        upBubbleMenu!.homeButtonView = bubbleMenu
+        upBubbleMenu!.addButtons(self.createButtons())
         upBubbleMenu.tag = 37
         
         self.navigationController?.view.addSubview(upBubbleMenu)
