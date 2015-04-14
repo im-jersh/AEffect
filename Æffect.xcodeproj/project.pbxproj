@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306542D1AD420D50024C433 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0306542C1AD420D50024C433 /* settings-25.png */; };
+		033312171ACDAFD2008E5309 /* arkansas.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312121ACDAFD2008E5309 /* arkansas.png */; };
+		033312181ACDAFD2008E5309 /* cruz.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312131ACDAFD2008E5309 /* cruz.png */; };
+		033312191ACDAFD2008E5309 /* indiana.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312141ACDAFD2008E5309 /* indiana.png */; };
+		0333121A1ACDAFD2008E5309 /* menendez.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312151ACDAFD2008E5309 /* menendez.png */; };
+		0333121B1ACDAFD2008E5309 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312161ACDAFD2008E5309 /* plane.png */; };
 		03635AAB1ABDF7F700ECE937 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635AAA1ABDF7F700ECE937 /* test.png */; };
 		03635AC11ABE237700ECE937 /* hackers.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635AB91ABE237700ECE937 /* hackers.png */; };
 		03635AC21ABE237700ECE937 /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635ABA1ABE237700ECE937 /* night.png */; };
@@ -37,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0306542C1AD420D50024C433 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
+		033312121ACDAFD2008E5309 /* arkansas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkansas.png; sourceTree = "<group>"; };
+		033312131ACDAFD2008E5309 /* cruz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cruz.png; sourceTree = "<group>"; };
+		033312141ACDAFD2008E5309 /* indiana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indiana.png; sourceTree = "<group>"; };
+		033312151ACDAFD2008E5309 /* menendez.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menendez.png; sourceTree = "<group>"; };
+		033312161ACDAFD2008E5309 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		03635AAA1ABDF7F700ECE937 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		03635AB81ABE093300ECE937 /* AEffect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AEffect-Bridging-Header.h"; sourceTree = "<group>"; };
 		03635AB91ABE237700ECE937 /* hackers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hackers.png; sourceTree = "<group>"; };
@@ -83,6 +95,12 @@
 		03635AC91ABE238000ECE937 /* Test Images */ = {
 			isa = PBXGroup;
 			children = (
+				0306542C1AD420D50024C433 /* settings-25.png */,
+				033312121ACDAFD2008E5309 /* arkansas.png */,
+				033312131ACDAFD2008E5309 /* cruz.png */,
+				033312141ACDAFD2008E5309 /* indiana.png */,
+				033312151ACDAFD2008E5309 /* menendez.png */,
+				033312161ACDAFD2008E5309 /* plane.png */,
 				03635AAA1ABDF7F700ECE937 /* test.png */,
 				03635AB91ABE237700ECE937 /* hackers.png */,
 				03635ABA1ABE237700ECE937 /* night.png */,
@@ -252,13 +270,19 @@
 				03635AC61ABE237700ECE937 /* manager.png in Resources */,
 				03635AC11ABE237700ECE937 /* hackers.png in Resources */,
 				03635AC41ABE237700ECE937 /* cord-cutters.png in Resources */,
+				0333121A1ACDAFD2008E5309 /* menendez.png in Resources */,
+				033312171ACDAFD2008E5309 /* arkansas.png in Resources */,
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
+				0333121B1ACDAFD2008E5309 /* plane.png in Resources */,
+				033312191ACDAFD2008E5309 /* indiana.png in Resources */,
 				03E83D401ABCE181001B3736 /* Images.xcassets in Resources */,
 				03635AAB1ABDF7F700ECE937 /* test.png in Resources */,
 				03635AC21ABE237700ECE937 /* night.png in Resources */,
 				03635AC71ABE237700ECE937 /* target.png in Resources */,
 				03635AC31ABE237700ECE937 /* tesla.png in Resources */,
+				033312181ACDAFD2008E5309 /* cruz.png in Resources */,
+				0306542D1AD420D50024C433 /* settings-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

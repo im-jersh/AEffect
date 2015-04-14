@@ -12,14 +12,14 @@ class AESelectEmotionTableViewController: UITableViewController {
     
     
     let testData = [
-        ["headline" : "Elon Musk Says Self-Driving Tesla Cars Will Be in the U.S. by Summer", "featuredImage" : "tesla.png"],
-        ["headline" : "Hackers Attack GreatFire.org, a Workaround for Websites Censored in China", "featuredImage" : "hackers.png"],
-        ["headline" : "$10 Million Settlement in Target Data Breach Gets Preliminary Approval", "featuredImage" : "target.png"],
-        ["headline" : "A Sucker Is Optimized Every Minute", "featuredImage" : "sucker.png"],
-        ["headline" : "Suddenly, Plenty of Options for Cord Cutters", "featuredImage" : "cord-cutters.png"],
-        ["headline" : "Facebook Announces a Payments Feature for Its Messenger App", "featuredImage" : "facebook.png"],
-        ["headline" : "Capturing the Night in Digital Photos, Spectacularly", "featuredImage" : "night.png"],
-        ["headline" : "Managers Turn to Computer Games, Aiming for More Efficient Employees", "featuredImage" : "manager.png"]
+        ["headline" : "Elon Musk Says Self-Driving Tesla Cars Will Be in the U.S. by Summer", "featuredImage" : "tesla.png", "emotion" : "joy", "author" : "Aaron M. Kessler", "date" : "03/19/2015"],
+        ["headline" : "Hackers Attack GreatFire.org, a Workaround for Websites Censored in China", "featuredImage" : "hackers.png", "emotion" : "joy", "author" : "Patrick Boehler", "date" : "03/20/2015"],
+        ["headline" : "$10 Million Settlement in Target Data Breach Gets Preliminary Approval", "featuredImage" : "target.png", "emotion" : "joy", "author" : "Hiroki Tabuchi", "date" : "03/20/2015"],
+        ["headline" : "A Sucker Is Optimized Every Minute", "featuredImage" : "sucker.png", "emotion" : "joy", "author" : "Virginia Heffernan", "date" : "03/22/2015"],
+        ["headline" : "Suddenly, Plenty of Options for Cord Cutters", "featuredImage" : "cord-cutters.png", "emotion" : "joy", "author" : "Emily Steel", "date" : "03/19/2015"],
+        ["headline" : "Facebook Announces a Payments Feature for Its Messenger App", "featuredImage" : "facebook.png", "emotion" : "joy", "author" : "Vindu Goel", "date" : "03/18/2015"],
+        ["headline" : "Capturing the Night in Digital Photos, Spectacularly", "featuredImage" : "night.png", "emotion" : "joy", "author" : "Farhad Manjoo", "date" : "03/19/2015"],
+        ["headline" : "Managers Turn to Computer Games, Aiming for More Efficient Employees", "featuredImage" : "manager.png", "emotion" : "joy", "author" : "CONOR DOUGHERTY and QUENTIN HARDY", "date" : "03/16/2015"]
     ]
     
     override func viewDidLoad() {
@@ -186,6 +186,26 @@ class AESelectEmotionTableViewController: UITableViewController {
         cell.clipsToBounds = true;
         cell.featuredImage.image = img
         cell.headline.text = cellData["headline"]!
+        
+        let author = cellData["author"]!.uppercaseString
+        cell.author.text = "By \(author)"
+        cell.pubDate.text = cellData["date"]!
+        
+        if (cellData["emotion"] == "joy") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        } else if (cellData["emotion"] == "surprised") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+        } else if (cellData["emotion"] == "sadness") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+        } else if (cellData["emotion"] == "annoyed") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+        } else if (cellData["emotion"] == "anger") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+        } else if (cellData["emotion"] == "fear") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+        } else {
+            cell.emotionColor.backgroundColor = UIColor.clearColor()
+        }
         
         return cell
     }
