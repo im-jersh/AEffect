@@ -13,6 +13,8 @@ class AETableViewCell: UITableViewCell {
     @IBOutlet weak var emotionColor: UIView!
     @IBOutlet weak var featuredImage: UIImageView!
     @IBOutlet weak var headline: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var pubDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
