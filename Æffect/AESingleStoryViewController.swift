@@ -34,4 +34,10 @@ class AESingleStoryViewController: UIViewController {
         newsImageView.image = UIImage(named: newsImage)
         
     }
+    
+    override func viewDidLoad() {
+        
+    
+    }
+    
 }

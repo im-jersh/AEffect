@@ -53,6 +53,9 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         println("I'm here!");
         
+        let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+        
     }
     
     override func viewWillAppear(animated: Bool) {
