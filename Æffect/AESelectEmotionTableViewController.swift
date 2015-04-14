@@ -158,7 +158,7 @@ class AESelectEmotionTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as AETableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as! AETableViewCell
         
         let cellData = testData[indexPath.row]
         
