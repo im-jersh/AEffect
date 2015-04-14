@@ -47,7 +47,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         upBubbleMenu!.homeButtonView = bubbleMenu
         upBubbleMenu!.addButtons(self.createButtons())
-        upBubbleMenu.tag = 37
+        upBubbleMenu!.tag = 37
         
         self.navigationController?.view.addSubview(upBubbleMenu!)
         
@@ -158,6 +158,21 @@ class AESelectEmotionTableViewController: UITableViewController {
         return buttons
     }
     
+    // Target method for select submenu button
+    func buttonSelected(sender: UIButton) {
+        
+        // DEBUG
+        println("Button tapped, tag: \(sender.tag)")
+        
+        // change menu label text to match selection
+        for subview in self.navigationController!.view.subviews as! [UIView] {
+            if var mainButton = subview as? DWBubbleMenuButton {
+                mainButton.homeButtonView = self.createHomeButtonViewFromText(sender.titleLabel!.text!)
+                self.navigationController?.view.addSubview(mainButton)
+            }
+        }
+        
+    }
     
     // MARK: - Table view data source
     
@@ -186,6 +201,25 @@ class AESelectEmotionTableViewController: UITableViewController {
         cell.featuredImage.image = img
         cell.headline.text = cellData["headline"]!
         
+        let author = cellData["author"]!.uppercaseString
+        cell.author.text = "By \(author)"
+        cell.pubDate.text = cellData["date"]!
+        
+        if (cellData["emotion"] == "joy") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        } else if (cellData["emotion"] == "surprised") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+        } else if (cellData["emotion"] == "sadness") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+        } else if (cellData["emotion"] == "annoyed") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+        } else if (cellData["emotion"] == "anger") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+        } else if (cellData["emotion"] == "fear") {
+            cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+        } else {
+            cell.emotionColor.backgroundColor = UIColor.clearColor()
+        }
         
         return cell
     }
