@@ -150,7 +150,7 @@ class AESelectEmotionTableViewController: UITableViewController {
             button.clipsToBounds = true
             button.tag = tag++
             
-            button.addTarget(self, action: "buttonSelected:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: "emotionSelected:", forControlEvents: UIControlEvents.TouchUpInside)
             
             buttons.append(button)
         }
@@ -159,7 +159,7 @@ class AESelectEmotionTableViewController: UITableViewController {
     }
     
     // Target method for select submenu button
-    func buttonSelected(sender: UIButton) {
+    func emotionSelected(sender: UIButton) {
         
         // DEBUG
         println("Button tapped, tag: \(sender.tag)")
@@ -218,7 +218,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         } else if (cellData["emotion"] == "fear") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
         } else {
-            cell.emotionColor.backgroundColor = UIColor.clearColor()
+            cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
         
         return cell
