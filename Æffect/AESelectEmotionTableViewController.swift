@@ -62,6 +62,10 @@ class AESelectEmotionTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.view.addSubview(upBubbleMenu!)
     }
+
+    @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
+        println("back to main feed")
+    }
     
     
     // Target method for select submenu button

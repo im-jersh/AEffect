@@ -98,7 +98,7 @@
                         <barButtonItem key="leftBarButtonItem" title="RL" id="d8a-2M-tkf">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="LZw-Pq-8hB" kind="presentation" id="4C0-0U-TYY"/>
+                                <segue destination="LZw-Pq-8hB" kind="presentation" identifier="showReadingList" id="4C0-0U-TYY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -409,9 +409,17 @@
                             <outlet property="delegate" destination="eV1-HQ-mqT" id="JAX-99-kZm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reading List" id="2I0-fO-XPN"/>
+                    <navigationItem key="navigationItem" title="Reading List" id="2I0-fO-XPN">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="HbC-8o-7ew">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="BD6-zg-KKA" kind="unwind" unwindAction="unwindToMainFeed:" id="GN3-yn-jmg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-G2-JF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BD6-zg-KKA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1940" y="-267"/>
         </scene>
