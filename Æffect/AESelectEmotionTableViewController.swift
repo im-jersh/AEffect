@@ -52,8 +52,6 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         self.navigationController?.view.addSubview(upBubbleMenu!)
         
-        println("I'm here!");
-        
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         
