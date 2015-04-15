@@ -50,7 +50,6 @@ class AESelectEmotionTableViewController: UITableViewController {
         upBubbleMenu!.addButtons(self.createButtons())
         upBubbleMenu!.tag = 37
         
-        self.navigationController?.view.addSubview(upBubbleMenu!)
         
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
@@ -65,6 +64,12 @@ class AESelectEmotionTableViewController: UITableViewController {
     // Target method for select submenu button
     func buttonSelected(sender: UIButton) {
         println("Button tapped, tag: \(sender.tag)")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        upBubbleMenu!.removeFromSuperview()
+        
     }
     
     
@@ -163,6 +168,9 @@ class AESelectEmotionTableViewController: UITableViewController {
         // DEBUG
         println("Button tapped, tag: \(sender.tag)")
         
+        // adjusts tint color of navigation bar according to selected emotion
+        self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
+        
         // change menu label text to match selection
         for subview in self.navigationController!.view.subviews as! [UIView] {
             if var mainButton = subview as? DWBubbleMenuButton {
@@ -236,7 +244,6 @@ class AESelectEmotionTableViewController: UITableViewController {
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        upBubbleMenu!.removeFromSuperview()
 
         if segue.identifier == "showNewsStory" {
             if let destination = segue.destinationViewController as? AESingleStoryViewController {
