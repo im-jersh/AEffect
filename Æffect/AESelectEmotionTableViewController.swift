@@ -229,15 +229,11 @@ class AESelectEmotionTableViewController: UITableViewController {
         return cell
     }
     
-    var newsHeadLine = ""
-    var newsImage = UIImage?()
+    
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
-    let cellData = testData[indexPath.row]
-    
-    newsHeadLine = cellData["headline"]!
-    newsImage = UIImage(named: cellData["featuredImage"]!)
+        
     }
     */
     

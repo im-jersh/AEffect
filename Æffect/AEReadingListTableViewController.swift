@@ -59,7 +59,7 @@ class AEReadingListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 6
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,15 +104,11 @@ class AEReadingListTableViewController: UITableViewController {
         return cell
     }
     
-    var newsHeadLine = ""
-    var newsImage = UIImage?()
+    
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
-    let cellData = testData[indexPath.row]
     
-    newsHeadLine = cellData["headline"]!
-    newsImage = UIImage(named: cellData["featuredImage"]!)
     }
     */
     
@@ -136,13 +132,17 @@ class AEReadingListTableViewController: UITableViewController {
         }
     }
     
-    /*
+    
+    
+    
+    
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+        // all cells in the table view should be editable
+        return true
     }
-    */
+    
     
     /*
     // Override to support editing the table view.
