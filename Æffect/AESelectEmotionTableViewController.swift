@@ -258,13 +258,13 @@ class AESelectEmotionTableViewController: UITableViewController {
         }
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     // Return NO if you do not want the specified item to be editable.
-    return true
+        return true
     }
-    */
+
     
     /*
     // Override to support editing the table view.
@@ -278,19 +278,21 @@ class AESelectEmotionTableViewController: UITableViewController {
     }
     */
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        /*if editingStyle == .Delete {
+        if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            
         }
         else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }*/
+        }
     }
 
 //table view swipe from the right to left
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
-        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share " , handler: { (action, indexPath:NSIndexPath!) -> Void in
             // 2
             let shareMenu = UIAlertController(title: nil, message: "Remove From current List", preferredStyle: .ActionSheet)
             
@@ -323,9 +325,11 @@ class AESelectEmotionTableViewController: UITableViewController {
         // 5
         addAction.backgroundColor = UIColor.lightGrayColor()
         
-        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark  " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-            // 2
-            println("mark")
+        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
+            
+           //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            
         })
         
         markAction.backgroundColor = UIColor.darkGrayColor()
