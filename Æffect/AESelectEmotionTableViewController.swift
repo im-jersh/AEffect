@@ -287,12 +287,12 @@ class AESelectEmotionTableViewController: UITableViewController {
         }*/
     }
 
-    
+//table view swipe from the right to left
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
-        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
-            let shareMenu = UIAlertController(title: nil, message: "Remoove From current List", preferredStyle: .ActionSheet)
+            let shareMenu = UIAlertController(title: nil, message: "Remove From current List", preferredStyle: .ActionSheet)
             
             let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -304,24 +304,33 @@ class AESelectEmotionTableViewController: UITableViewController {
             self.presentViewController(shareMenu, animated: true, completion: nil)
         })
         
-        shareAction.backgroundColor = UIColor.redColor()
+        shareAction.backgroundColor = UIColor.grayColor()
+    
         // 3
-        var rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add to List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        var addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add    \u{000A}List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 4
-            let rateMenu = UIAlertController(title: nil, message: "Add to your reading list", preferredStyle: .ActionSheet)
+            let addMenu = UIAlertController(title: nil, message: "Add to reading list", preferredStyle: .ActionSheet)
             
             let appRateAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
-            rateMenu.addAction(appRateAction)
-            rateMenu.addAction(cancelAction)
+            addMenu.addAction(appRateAction)
+            addMenu.addAction(cancelAction)
             
             
-            self.presentViewController(rateMenu, animated: true, completion: nil)
+            self.presentViewController(addMenu, animated: true, completion: nil)
         })
         // 5
-        rateAction.backgroundColor = UIColor.blueColor()
-        return [shareAction,rateAction]
+        addAction.backgroundColor = UIColor.lightGrayColor()
+        
+        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark  " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 2
+            println("mark")
+        })
+        
+        markAction.backgroundColor = UIColor.darkGrayColor()
+        
+        return [shareAction,addAction, markAction]
     }
     
 
