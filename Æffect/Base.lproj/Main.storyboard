@@ -324,7 +324,7 @@
         <!--selectEmotion-->
         <scene sceneID="6xc-Kg-oCo">
             <objects>
-                <tableViewController storyboardIdentifier="ReadingList" title="selectEmotion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eV1-HQ-mqT" customClass="AESelectEmotionTableViewController" customModule="Æffect" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ReadingList" title="selectEmotion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eV1-HQ-mqT" customClass="AEReadingListTableViewController" customModule="Æffect" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="jxI-Rf-3fX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
                                     <outlet property="featuredImage" destination="VRp-aL-76U" id="ucg-0N-jv3"/>
                                     <outlet property="headline" destination="Rfp-e1-hkT" id="Rbv-wr-i5T"/>
                                     <outlet property="pubDate" destination="h4B-dz-SS7" id="ZDc-gc-zFY"/>
-                                    <segue destination="UAs-CI-VkL" kind="show" identifier="showNewsStory" id="MFb-z7-b0U"/>
+                                    <segue destination="UAs-CI-VkL" kind="show" identifier="showArticleDetail" id="MFb-z7-b0U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -442,6 +442,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Qph-dg-Zuy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -34,7 +34,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // make cell separator lines clear
+        // make cell separator lines gray
         self.tableView.separatorColor = UIColor.grayColor()
         // change tableView background view
         self.tableView.backgroundColor = UIColor.whiteColor()
