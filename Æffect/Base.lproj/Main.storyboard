@@ -22,55 +22,69 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-wQ-Irl">
-                                            <rect key="frame" x="0.0" y="1" width="8" height="136"/>
+                                            <rect key="frame" x="-4" y="1" width="8" height="136"/>
                                             <color key="backgroundColor" red="0.46666666666666667" green="0.74901960784313726" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="8" id="hh0-oP-8HW"/>
-                                            </constraints>
-                                        </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
-                                            <rect key="frame" x="18" y="18" width="149" height="102"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="iH8-xi-96a" secondAttribute="height" multiplier="164:113" id="MCU-a4-OJq"/>
-                                                <constraint firstAttribute="width" constant="100" id="SgE-hu-4Vg"/>
+                                                <constraint firstAttribute="height" constant="10" id="rkO-Re-Do0"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="SgE-hu-4Vg"/>
+                                                    <exclude reference="rkO-Re-Do0"/>
                                                 </mask>
                                             </variation>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
+                                            <rect key="frame" x="16" y="18" width="149" height="102"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="iH8-xi-96a" secondAttribute="height" multiplier="164:113" id="MCU-a4-OJq"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing multiple line headline and how the UILabel will stretch to accomodate a really long headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-pg-YbX">
-                                            <rect key="frame" x="175" y="28" width="384" height="64"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Testing multiple line headline and how the UILabel will stretch to accomodate a really long headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-pg-YbX">
+                                            <rect key="frame" x="175" y="14" width="384" height="58"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4e-54-NZB">
+                                            <rect key="frame" x="175" y="80" width="384" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publication Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-QF-3wd">
+                                            <rect key="frame" x="175" y="105" width="384" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zCe-wQ-Irl" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="-7" id="2Ve-gN-212"/>
-                                        <constraint firstItem="iH8-xi-96a" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="10" id="2vq-dK-i7M"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zCe-wQ-Irl" secondAttribute="bottom" constant="-7" id="Ea3-jG-fnH"/>
-                                        <constraint firstItem="Que-pg-YbX" firstAttribute="leading" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="8" id="Jh1-rc-vwO"/>
-                                        <constraint firstItem="Que-pg-YbX" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="20" id="dmg-SG-b3M"/>
-                                        <constraint firstItem="iH8-xi-96a" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="10" id="edV-tN-ueD"/>
-                                        <constraint firstItem="iH8-xi-96a" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="8" id="mpk-o0-koS"/>
-                                        <constraint firstItem="zCe-wQ-Irl" firstAttribute="leading" secondItem="ANl-3p-hbX" secondAttribute="leadingMargin" constant="-8" id="p4b-GV-Zcw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Que-pg-YbX" secondAttribute="trailing" id="qfb-bZ-chy"/>
-                                        <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="Que-pg-YbX" secondAttribute="bottom" constant="85" id="rzb-ys-y2u"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="iH8-xi-96a" secondAttribute="bottom" constant="10" id="xDh-y5-d4g"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zCe-wQ-Irl" secondAttribute="bottom" constant="-7" id="0RT-ij-vEM"/>
+                                        <constraint firstItem="I4e-54-NZB" firstAttribute="top" secondItem="Que-pg-YbX" secondAttribute="bottom" constant="8" id="3Vj-G0-23G"/>
+                                        <constraint firstItem="Que-pg-YbX" firstAttribute="leading" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="10" id="4gY-sI-AI5"/>
+                                        <constraint firstItem="iH8-xi-96a" firstAttribute="leading" secondItem="zCe-wQ-Irl" secondAttribute="trailing" constant="12" id="9wz-Hb-Oi3"/>
+                                        <constraint firstItem="Que-pg-YbX" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="6" id="Cfw-iw-qeQ"/>
+                                        <constraint firstItem="T9I-QF-3wd" firstAttribute="leading" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="10" id="HDs-ii-SG1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="T9I-QF-3wd" secondAttribute="bottom" constant="8" id="LUl-EB-J13"/>
+                                        <constraint firstItem="T9I-QF-3wd" firstAttribute="top" secondItem="I4e-54-NZB" secondAttribute="bottom" constant="8" id="PYq-7a-xyr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iH8-xi-96a" secondAttribute="bottom" constant="10" id="Pm8-jn-emN"/>
+                                        <constraint firstItem="Que-pg-YbX" firstAttribute="trailing" secondItem="ANl-3p-hbX" secondAttribute="trailingMargin" id="SMg-f8-VuM"/>
+                                        <constraint firstItem="I4e-54-NZB" firstAttribute="leading" secondItem="iH8-xi-96a" secondAttribute="trailing" constant="10" id="UAV-3A-EQk"/>
+                                        <constraint firstItem="T9I-QF-3wd" firstAttribute="trailing" secondItem="ANl-3p-hbX" secondAttribute="trailingMargin" id="XZ9-L8-X0I"/>
+                                        <constraint firstItem="iH8-xi-96a" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="10" id="Xbg-5j-VlE"/>
+                                        <constraint firstItem="zCe-wQ-Irl" firstAttribute="leading" secondItem="ANl-3p-hbX" secondAttribute="leadingMargin" constant="-12" id="noY-nu-5V5"/>
+                                        <constraint firstItem="zCe-wQ-Irl" firstAttribute="top" secondItem="ANl-3p-hbX" secondAttribute="topMargin" constant="-7" id="r5z-te-NcM"/>
+                                        <constraint firstItem="I4e-54-NZB" firstAttribute="trailing" secondItem="ANl-3p-hbX" secondAttribute="trailingMargin" id="shB-Cx-6X6"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="mpk-o0-koS"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="author" destination="I4e-54-NZB" id="8JG-3f-cDN"/>
                                     <outlet property="emotionColor" destination="zCe-wQ-Irl" id="jsZ-E0-j8b"/>
                                     <outlet property="featuredImage" destination="iH8-xi-96a" id="uNu-cZ-vpr"/>
                                     <outlet property="headline" destination="Que-pg-YbX" id="aGT-0e-86b"/>
+                                    <outlet property="pubDate" destination="T9I-QF-3wd" id="jib-SN-W1K"/>
                                     <segue destination="Qhe-uZ-dnu" kind="show" identifier="showNewsStory" id="bUN-8d-7D5"/>
                                 </connections>
                             </tableViewCell>
