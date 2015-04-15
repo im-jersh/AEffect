@@ -94,7 +94,11 @@
                             <outlet property="delegate" destination="Qzj-tE-eo9" id="DjF-Gi-6ux"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Æffect" id="ZpN-bl-1k3"/>
+                    <navigationItem key="navigationItem" title="Emotion" id="ZpN-bl-1k3">
+                        <barButtonItem key="leftBarButtonItem" title="RL" id="d8a-2M-tkf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip6-17-ern" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
