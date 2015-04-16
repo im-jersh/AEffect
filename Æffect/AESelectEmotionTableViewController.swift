@@ -209,11 +209,27 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         
         // Configure the cell...
-        let img = UIImage(named: cellData.article_url)
         
-           
+        
+        func load_image(urlString:String)
+        {
+            var imgURL: NSURL = NSURL(string: urlString)!
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
+            NSURLConnection.sendAsynchronousRequest(
+                request, queue: NSOperationQueue.mainQueue(),
+                completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+                    if error == nil {
+                        cell.featuredImage.image = UIImage(data: data)
+                    }
+            })
+        }
+        
+        //println(cellData.picture_url)
+        load_image(cellData.picture_url)
+
+        //let img = UIImage(named: picture_url)
         cell.clipsToBounds = true;
-        cell.featuredImage.image = img
+        //cell.featuredImage.image = img
         cell.headline.text = cellData.title
         
         let author = cellData.author.uppercaseString
@@ -262,7 +278,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     var newsH = stories.story[newsIndex];
                     
                     destination.newsTitle = newsH.title
-                    destination.newsImage = newsH.article_url
+                    destination.newsImage = newsH.picture_url
                     destination.newsStory = newsH.content_without_tags
                     destination.newsDate = newsH.pubdate
                     destination.newsAuthor = newsH.author
