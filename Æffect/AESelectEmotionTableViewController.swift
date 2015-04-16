@@ -225,6 +225,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         } else {
             cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
+
         
         return cell
     }

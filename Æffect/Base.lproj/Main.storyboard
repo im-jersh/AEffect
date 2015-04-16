@@ -227,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hk9-6d-P0C">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w78-rv-adc" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="573"/>
@@ -408,6 +408,13 @@
                             <outlet property="delegate" destination="eV1-HQ-mqT" id="JAX-99-kZm"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aqc-47-X7i"/>
+                        <barButtonItem systemItem="trash" id="kXv-D1-tyG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zeb-Yi-KzX"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Reading List" id="2I0-fO-XPN">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="HbC-8o-7ew">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -416,6 +423,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="doneButton" destination="HbC-8o-7ew" id="Oug-lo-OeM"/>
                         <segue destination="UAs-CI-VkL" kind="show" identifier="showArticleDetail" id="JUa-8p-T0e"/>
@@ -450,12 +458,16 @@
             <objects>
                 <navigationController storyboardIdentifier="ReadingListNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LZw-Pq-8hB" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Qph-dg-Zuy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="aLt-H4-exI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="eV1-HQ-mqT" kind="relationship" relationship="rootViewController" id="CMa-yV-nm5"/>
                     </connections>

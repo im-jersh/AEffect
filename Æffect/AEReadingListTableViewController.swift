@@ -30,10 +30,8 @@ class AEReadingListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        // self.clearsSelectionOnViewWillAppear = true
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // make cell separator lines gray
         self.tableView.separatorColor = UIColor.grayColor()
@@ -43,30 +41,23 @@ class AEReadingListTableViewController: UITableViewController {
         // add system edit button to navigation bar
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        
-        
-        
+        // edit back button text for article detail controller
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-    
+
         
         
     }
+
     
-    
-    
-    
+
     
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 6
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,9 +99,11 @@ class AEReadingListTableViewController: UITableViewController {
             cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
         
+        // store weak reference to tableView in cell object
+        cell.tableView = self.tableView
+        
         return cell
     }
-    
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -156,16 +149,27 @@ class AEReadingListTableViewController: UITableViewController {
         
         // enter edit mode
         if editing {
+            
             // set table to edit mode
             self.tableView.setEditing(editing, animated: animated)
+            
             // remove left done button from nav bar
             self.navigationItem.setLeftBarButtonItem(nil, animated: true)
             
+            // show toolbar
+            self.navigationController?.setToolbarHidden(false, animated: true)
+            
         } else if !editing { // exit edit mode
+            
             // exit edit mode in table view
             self.tableView.setEditing(editing, animated: animated)
+            
             // add left done button to nav bar
             self.navigationItem.setLeftBarButtonItem(self.doneButton, animated: true)
+            
+            // show toolbar
+            self.navigationController?.setToolbarHidden(true, animated: true)
+            
         }
         
     }
