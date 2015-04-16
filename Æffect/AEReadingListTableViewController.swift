@@ -102,17 +102,26 @@ class AEReadingListTableViewController: UITableViewController {
         // store weak reference to tableView in cell object
         cell.tableView = self.tableView
         
+        // change selection style of cell
+        cell.selectionStyle = .Gray
+        
+        // set multiple selection background view
+        var multiSelectBGView = UIView(frame: cell.frame)
+        multiSelectBGView.backgroundColor = UIColor.clearColor()
+        cell.multipleSelectionBackgroundView = multiSelectBGView
+        
         return cell
     }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? AETableViewCell
         
         if tableView.editing {
             // don't push to article detail 
-            
+            cell?.tintColor = UIColor.redColor()
+    
         } else if !tableView.editing {
             // perform segue
             self.performSegueWithIdentifier("showArticleDetail", sender: self)

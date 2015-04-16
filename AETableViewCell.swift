@@ -30,6 +30,13 @@ class AETableViewCell: UITableViewCell {
     
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
+        
+        // remove disclosure indicator when entering edit mode
+        if editing {
+            self.accessoryType = .None
+        } else { // add disclosure indicator
+            self.accessoryType = .DisclosureIndicator
+        }
     }
     
     // edit selection marker for for each cell to center marker in extra margin that is revealed when in editing mode
@@ -44,7 +51,7 @@ class AETableViewCell: UITableViewCell {
         if let parentTableView = self.tableView as UITableView? {
             if parentTableView.editing {
                 var contentFrame : CGRect = self.contentView.frame
-                contentFrame.origin.x = 50.0
+                contentFrame.origin.x = 51.0
                 self.contentView.frame = contentFrame
             }
         }
@@ -60,7 +67,7 @@ class AETableViewCell: UITableViewCell {
         if let parentTableView = self.tableView as UITableView? {
             if parentTableView.editing {
                 var contentFrame : CGRect = self.contentView.frame
-                contentFrame.origin.x = 50.0
+                contentFrame.origin.x = 51.0
                 self.contentView.frame = contentFrame
             }
         }
