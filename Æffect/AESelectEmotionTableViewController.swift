@@ -36,7 +36,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
 ////////////////////////////////////////////////////////////////////////////////////////
 /*Get news data from server*/
     
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
+    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
     var stories: AEStories = AEStories ()
     var selectedStory: AEStory?
 
@@ -211,9 +211,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         // Configure the cell...
         
         
-        func load_image(urlString:String)
-        {
-            var imgURL: NSURL = NSURL(string: urlString)!
+         var imgURL: NSURL = NSURL(string: cellData.picture_url)!
             let request: NSURLRequest = NSURLRequest(URL: imgURL)
             NSURLConnection.sendAsynchronousRequest(
                 request, queue: NSOperationQueue.mainQueue(),
@@ -222,10 +220,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                         cell.featuredImage.image = UIImage(data: data)
                     }
             })
-        }
         
         //println(cellData.picture_url)
-        load_image(cellData.picture_url)
 
         //let img = UIImage(named: picture_url)
         cell.clipsToBounds = true;
