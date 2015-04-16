@@ -31,6 +31,9 @@
 		03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D411ABCE181001B3736 /* LaunchScreen.xib */; };
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
 		03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */; };
+		133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5531AE0425E007A8D01 /* AEStory.swift */; };
+		133DC5561AE04278007A8D01 /* AEStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5551AE04278007A8D01 /* AEStories.swift */; };
+		133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5571AE044D9007A8D01 /* AETestData.swift */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,9 @@
 		03E83D4D1ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
 		03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AETableViewCell.swift; path = ../AETableViewCell.swift; sourceTree = "<group>"; };
+		133DC5531AE0425E007A8D01 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
+		133DC5551AE04278007A8D01 /* AEStories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStories.swift; sourceTree = "<group>"; };
+		133DC5571AE044D9007A8D01 /* AETestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AETestData.swift; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +159,8 @@
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
 				03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */,
+				133DC5531AE0425E007A8D01 /* AEStory.swift */,
+				133DC5551AE04278007A8D01 /* AEStories.swift */,
 				13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */,
 				03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */,
 				03231C9C1ADEEB5700A9231C /* AEReadingListTableViewController.swift */,
@@ -163,6 +171,7 @@
 				03E83D411ABCE181001B3736 /* LaunchScreen.xib */,
 				03E83D361ABCE181001B3736 /* Supporting Files */,
 				13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */,
+				133DC5571AE044D9007A8D01 /* AETestData.swift */,
 			);
 			path = "Æffect";
 			sourceTree = "<group>";
@@ -310,10 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */,
+				133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */,
+				133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */,
 				13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */,
 				03231C9D1ADEEB5700A9231C /* AEReadingListTableViewController.swift in Sources */,
 				03231C9F1ADEF46000A9231C /* AESelectEmotionTableViewController.swift in Sources */,
 				13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */,
+				133DC5561AE04278007A8D01 /* AEStories.swift in Sources */,
 				03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
 			);
