@@ -325,7 +325,7 @@
         <scene sceneID="6xc-Kg-oCo">
             <objects>
                 <tableViewController storyboardIdentifier="ReadingList" title="selectEmotion" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eV1-HQ-mqT" customClass="AEReadingListTableViewController" customModule="Æffect" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="jxI-Rf-3fX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" id="jxI-Rf-3fX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -416,10 +416,10 @@
                                 <segue destination="BD6-zg-KKA" kind="unwind" unwindAction="unwindToMainFeed:" id="GN3-yn-jmg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0bE-uz-p2w">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="HbC-8o-7ew" id="Oug-lo-OeM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-G2-JF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="BD6-zg-KKA" userLabel="Exit" sceneMemberID="exit"/>
