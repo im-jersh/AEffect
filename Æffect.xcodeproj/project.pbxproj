@@ -36,6 +36,7 @@
 		133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5571AE044D9007A8D01 /* AETestData.swift */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
+		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		133DC5571AE044D9007A8D01 /* AETestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AETestData.swift; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
+		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		03635AC91ABE238000ECE937 /* Test Images */ = {
 			isa = PBXGroup;
 			children = (
+				13FEA8601AE0600B008466C7 /* noimage.jpg */,
 				0306542C1AD420D50024C433 /* settings-25.png */,
 				033312121ACDAFD2008E5309 /* arkansas.png */,
 				033312131ACDAFD2008E5309 /* cruz.png */,
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03635AC81ABE237700ECE937 /* sucker.png in Resources */,
+				13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */,
 				03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */,
 				03635AC61ABE237700ECE937 /* manager.png in Resources */,
 				03635AC11ABE237700ECE937 /* hackers.png in Resources */,
