@@ -95,6 +95,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Æffect" id="ZpN-bl-1k3"/>
+                    <connections>
+                        <outlet property="navTitle" destination="ZpN-bl-1k3" id="JXB-SW-aH1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip6-17-ern" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
