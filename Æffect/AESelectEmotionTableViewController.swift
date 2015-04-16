@@ -325,18 +325,23 @@ class AESelectEmotionTableViewController: UITableViewController {
         // 5
         addAction.backgroundColor = UIColor.lightGrayColor()
         
-        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
+        
+        
+    /********************************************/
+    //test delete option.
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
             
            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
             
         })
         
-        markAction.backgroundColor = UIColor.darkGrayColor()
+        deleteAction.backgroundColor = UIColor.darkGrayColor()
         
-        return [shareAction,addAction, markAction]
+        return [shareAction,addAction, deleteAction]
     }
-    
+    /********************************************/
+
 
     
     /*
