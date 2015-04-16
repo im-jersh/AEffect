@@ -400,7 +400,6 @@
                                     <outlet property="featuredImage" destination="VRp-aL-76U" id="ucg-0N-jv3"/>
                                     <outlet property="headline" destination="Rfp-e1-hkT" id="Rbv-wr-i5T"/>
                                     <outlet property="pubDate" destination="h4B-dz-SS7" id="ZDc-gc-zFY"/>
-                                    <segue destination="UAs-CI-VkL" kind="show" identifier="showArticleDetail" id="MFb-z7-b0U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -419,6 +418,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="HbC-8o-7ew" id="Oug-lo-OeM"/>
+                        <segue destination="UAs-CI-VkL" kind="show" identifier="showArticleDetail" id="JUa-8p-T0e"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-G2-JF2" userLabel="First Responder" sceneMemberID="firstResponder"/>

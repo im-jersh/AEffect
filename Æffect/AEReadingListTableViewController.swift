@@ -112,12 +112,22 @@ class AEReadingListTableViewController: UITableViewController {
     }
     
     
-    /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        if tableView.editing {
+            // don't push to article detail 
+            
+        } else if !tableView.editing {
+            // perform segue
+            self.performSegueWithIdentifier("showArticleDetail", sender: self)
+            
+        }
     
     }
-    */
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
