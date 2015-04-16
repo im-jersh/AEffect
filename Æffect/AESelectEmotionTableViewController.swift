@@ -10,6 +10,29 @@ import UIKit
 
 class AESelectEmotionTableViewController: UITableViewController {
     
+    struct AEData {
+        var emoji: String
+        var bgColor: UIColor
+    }
+    
+    let emotionArray = ["joy", "excitement", "sadness", "annoyed", "anger", "fear"]
+    
+    let aedictionary: [String: AEData] = [
+        "joy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
+        "excitement": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
+        "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
+        "annoyed": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
+        "anger": AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)),
+        "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
+    ]
+    
+    @IBOutlet weak var navTitle: UINavigationItem!
+    //var defaultEmotion: String = self.emotionArray[0]
+    
+    
+    var upBubbleMenu : DWBubbleMenuButton?
+    
+    
     
     let testData = [
         ["headline" : "Elon Musk Says Self-Driving Tesla Cars Will Be in the U.S. by Summer","date":"2015-04-33","author":"ABC DEF", "featuredImage" : "tesla.png", "story" : "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."],
@@ -21,9 +44,8 @@ class AESelectEmotionTableViewController: UITableViewController {
         ["headline" : "Capturing the Night in Digital Photos, Spectacularly","date":"2015-04-33","author":"ABC DEF",  "featuredImage" : "night.png", "story" : ""],
         ["headline" : "Managers Turn to Computer Games, Aiming for More Efficient Employees","date":"2015-04-33","author":"ABC DEF",  "featuredImage" : "manager.png", "story" : ""]
     ]
-
     
-    var upBubbleMenu : DWBubbleMenuButton?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +67,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         
         upBubbleMenu = DWBubbleMenuButton(frame: CGRectMake(self.view.frame.size.width - bubbleMenu.frame.size.width - 20.0, self.view.frame.size.height - bubbleMenu.frame.size.height - 20.0, bubbleMenu.frame.size.width, bubbleMenu.frame.size.height), expansionDirection: .DirectionUp)
         
-
+        
         upBubbleMenu!.homeButtonView = bubbleMenu
         upBubbleMenu!.addButtons(self.createButtons())
         upBubbleMenu!.tag = 37
@@ -67,9 +89,7 @@ class AESelectEmotionTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        
         upBubbleMenu!.removeFromSuperview()
-        
     }
     
     
@@ -110,46 +130,16 @@ class AESelectEmotionTableViewController: UITableViewController {
         var buttons : Array<UIButton> = Array()
         var tag = 0
         
-        for buttonTitle in ["😄", "😳", "😢", "😒", "😠", "😖"] {
+        for emotion in self.emotionArray {
+            
             var button : UIButton = UIButton()
             button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            button.setTitle(buttonTitle, forState: UIControlState.Normal)
+            button.setTitle(aedictionary[emotion]!.emoji, forState: UIControlState.Normal)
             
             button.frame = CGRectMake(0.0, 0.0, 40.0, 40.0)
             button.layer.cornerRadius = button.frame.size.height / 2.0
             
-            var bgColor : UIColor
-            if (buttonTitle == "😄") {
-                // yellow
-                // bgColor = [UIColor colorWithRed:0.925f green:0.776f blue:0.184f alpha:0.5f];
-                bgColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-            } else if (buttonTitle == "😳") {
-                // green
-                // bgColor = [UIColor colorWithRed:0.467f green:0.749f blue:0.173f alpha:0.5f];
-                bgColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
-            } else if (buttonTitle == "😢") {
-                // blue
-                // bgColor = [UIColor colorWithRed:0.039f green:0.510f blue:0.663f alpha:0.5f];
-                bgColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
-            } else if (buttonTitle == "😒") {
-                // purple
-                // bgColor = [UIColor colorWithRed:0.494f green:0.298f blue:0.631f alpha:0.5f];
-                bgColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
-            } else if (buttonTitle == "😠") {
-                // orange
-                // bgColor = [UIColor colorWithRed:0.914f green:0.439f blue:0.118f alpha:0.5f];
-                bgColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
-            } else if (buttonTitle == "😖") {
-                // red
-                // bgColor = [UIColor colorWithRed:0.871f green:0.000f blue:0.286f alpha:0.5f];
-                bgColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
-            } else {
-                // bgColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-                bgColor = UIColor.blackColor()
-            }
-            
-            //button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
-            button.backgroundColor = bgColor
+            button.backgroundColor = self.aedictionary[emotion]!.bgColor
             
             button.clipsToBounds = true
             button.tag = tag++
@@ -157,10 +147,12 @@ class AESelectEmotionTableViewController: UITableViewController {
             button.addTarget(self, action: "emotionSelected:", forControlEvents: UIControlEvents.TouchUpInside)
             
             buttons.append(button)
+            
         }
         
         return buttons
     }
+    
     
     // Target method for select submenu button
     func emotionSelected(sender: UIButton) {
@@ -171,6 +163,9 @@ class AESelectEmotionTableViewController: UITableViewController {
         // adjusts tint color of navigation bar according to selected emotion
         self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
         
+        self.navTitle.title = emotionArray[sender.tag].capitalizedString
+        
+        //println("Button Title Label: \(sender.titleLabel!.text)")
         // change menu label text to match selection
         for subview in self.navigationController!.view.subviews as! [UIView] {
             if var mainButton = subview as? DWBubbleMenuButton {
@@ -212,9 +207,11 @@ class AESelectEmotionTableViewController: UITableViewController {
         cell.author.text = "By \(author)"
         cell.pubDate.text = cellData["date"]!
         
+        //cell.emotionColor.backgroundColor = aedictionary[cellData["emotion"]!]?.bgColor
+        
         if (cellData["emotion"] == "joy") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-        } else if (cellData["emotion"] == "surprised") {
+        } else if (cellData["emotion"] == "excitement") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
         } else if (cellData["emotion"] == "sadness") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
@@ -244,7 +241,7 @@ class AESelectEmotionTableViewController: UITableViewController {
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        
         if segue.identifier == "showNewsStory" {
             if let destination = segue.destinationViewController as? AESingleStoryViewController {
                 if let newsIndex = tableView.indexPathForSelectedRow()?.row {
@@ -284,14 +281,14 @@ class AESelectEmotionTableViewController: UITableViewController {
     */
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         /*if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        // Delete the row from the data source
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
         else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }*/
     }
-
+    
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
@@ -329,7 +326,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         return [shareAction,rateAction]
     }
     
-
+    
     
     /*
     // Override to support rearranging the table view.
