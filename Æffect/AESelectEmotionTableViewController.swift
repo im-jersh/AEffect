@@ -26,7 +26,6 @@ class AESelectEmotionTableViewController: UITableViewController {
         "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
     ]
     
-    @IBOutlet weak var navTitle: UINavigationItem!
     //var defaultEmotion: String = self.emotionArray[0]
     
     
@@ -167,7 +166,7 @@ class AESelectEmotionTableViewController: UITableViewController {
         // adjusts tint color of navigation bar according to selected emotion
         self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
         
-        self.navTitle.title = emotionArray[sender.tag].capitalizedString
+        self.title = emotionArray[sender.tag].capitalizedString
         
         //println("Button Title Label: \(sender.titleLabel!.text)")
         // change menu label text to match selection
