@@ -1,40 +1,20 @@
 //
-//  AESelectEmotionTableViewController.swift
+//  AEReadingListTableViewController.swift
 //  Æffect
 //
-//  Created by Joshua O'Steen on 3/20/15.
+//  Created by Joshua O'Steen on 4/15/15.
 //  Copyright (c) 2015 Josh O'Steen. All rights reserved.
 //
 
 import UIKit
 
-class AESelectEmotionTableViewController: UITableViewController {
+class AEReadingListTableViewController: UITableViewController {
+
+    // STRONG outlet to done button
+    // strong reference in order to allow for appear/disappear when entering/exiting edit mode
+    @IBOutlet var doneButton: UIBarButtonItem!
     
-    struct AEData {
-        var emoji: String
-        var bgColor: UIColor
-    }
-    
-    let emotionArray = ["joy", "excitement", "sadness", "annoyed", "anger", "fear"]
-    
-    let aedictionary: [String: AEData] = [
-        "joy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
-        "excitement": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
-        "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
-        "annoyed": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
-        "anger": AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)),
-        "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
-    ]
-    
-    @IBOutlet weak var navTitle: UINavigationItem!
-    //var defaultEmotion: String = self.emotionArray[0]
-    
-    
-    var upBubbleMenu : DWBubbleMenuButton?
-    
-    
-    
-    let testData = [
+    var testData = [
         ["headline" : "Elon Musk Says Self-Driving Tesla Cars Will Be in the U.S. by Summer","date":"2015-04-33","author":"ABC DEF", "featuredImage" : "tesla.png", "story" : "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."],
         ["headline" : "Hackers Attack GreatFire.org, a Workaround for Websites Censored in China","date":"2015-04-33","author":"ABC DEF", "featuredImage" : "hackers.png" , "story" : "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."],
         ["headline" : "$10 Million Settlement in Target Data Breach Gets Preliminary Approval","date":"2015-04-33","author":"ABC DEF",  "featuredImage" : "target.png" , "story" : "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."],
@@ -46,146 +26,38 @@ class AESelectEmotionTableViewController: UITableViewController {
     ]
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        // self.clearsSelectionOnViewWillAppear = true
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // make cell separator lines gray
         self.tableView.separatorColor = UIColor.grayColor()
         // change tableView background view
         self.tableView.backgroundColor = UIColor.whiteColor()
         
+        // add system edit button to navigation bar
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // add bottom bubble menu
-        var bubbleMenu = self.createHomeButtonView(99)
-        
-        upBubbleMenu = DWBubbleMenuButton(frame: CGRectMake(self.view.frame.size.width - bubbleMenu.frame.size.width - 20.0, self.view.frame.size.height - bubbleMenu.frame.size.height - 20.0, bubbleMenu.frame.size.width, bubbleMenu.frame.size.height), expansionDirection: .DirectionUp)
-        
-        
-        upBubbleMenu!.homeButtonView = bubbleMenu
-        upBubbleMenu!.addButtons(self.createButtons())
-        upBubbleMenu!.tag = 37
-        
-        
+        // edit back button text for article detail controller
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
+
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.view.addSubview(upBubbleMenu!)
+        
     }
 
-    @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
-        println("back to main feed")
-    }
     
-    
-    // Target method for select submenu button
-    func buttonSelected(sender: UIButton) {
-        println("Button tapped, tag: \(sender.tag)")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        upBubbleMenu!.removeFromSuperview()
-    }
-    
-    
-    // Create main menu button
-    func createHomeButtonView(inputemotion: Int) -> UILabel {
-        
-        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        if (inputemotion == 99) {
-            label.text = "Æ"
-        }
-        
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = NSTextAlignment.Center
-        label.layer.cornerRadius = label.frame.size.height / 2.0
-        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
-        label.clipsToBounds = true
-        
-        return label
-    }
-    
-    // Create main menu button
-    func createHomeButtonViewFromText(text: String) -> UILabel {
-        
-        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        label.text = text
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = NSTextAlignment.Center
-        label.layer.cornerRadius = label.frame.size.height / 2.0
-        label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
-        label.clipsToBounds = true
-        
-        return label
-    }
-    
-    // Create submenu buttons
-    func createButtons() -> Array<UIButton> {
-        
-        var buttons : Array<UIButton> = Array()
-        var tag = 0
-        
-        for emotion in self.emotionArray {
-            
-            var button : UIButton = UIButton()
-            button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            button.setTitle(aedictionary[emotion]!.emoji, forState: UIControlState.Normal)
-            
-            button.frame = CGRectMake(0.0, 0.0, 40.0, 40.0)
-            button.layer.cornerRadius = button.frame.size.height / 2.0
-            
-            button.backgroundColor = self.aedictionary[emotion]!.bgColor
-            
-            button.clipsToBounds = true
-            button.tag = tag++
-            
-            button.addTarget(self, action: "emotionSelected:", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            buttons.append(button)
-            
-        }
-        
-        return buttons
-    }
-    
-    
-    // Target method for select submenu button
-    func emotionSelected(sender: UIButton) {
-        
-        // DEBUG
-        println("Button tapped, tag: \(sender.tag)")
-        
-        // adjusts tint color of navigation bar according to selected emotion
-        self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
-        
-        self.navTitle.title = emotionArray[sender.tag].capitalizedString
-        
-        //println("Button Title Label: \(sender.titleLabel!.text)")
-        // change menu label text to match selection
-        for subview in self.navigationController!.view.subviews as! [UIView] {
-            if var mainButton = subview as? DWBubbleMenuButton {
-                mainButton.homeButtonView = self.createHomeButtonViewFromText(sender.titleLabel!.text!)
-                self.navigationController?.view.addSubview(mainButton)
-            }
-        }
-        
-    }
+
     
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -211,11 +83,9 @@ class AESelectEmotionTableViewController: UITableViewController {
         cell.author.text = "By \(author)"
         cell.pubDate.text = cellData["date"]!
         
-        //cell.emotionColor.backgroundColor = aedictionary[cellData["emotion"]!]?.bgColor
-        
         if (cellData["emotion"] == "joy") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-        } else if (cellData["emotion"] == "excitement") {
+        } else if (cellData["emotion"] == "surprised") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
         } else if (cellData["emotion"] == "sadness") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
@@ -228,22 +98,42 @@ class AESelectEmotionTableViewController: UITableViewController {
         } else {
             cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
-
+        
+        // store weak reference to tableView in cell object
+        cell.tableView = self.tableView
+        
+        // change selection style of cell
+        cell.selectionStyle = .Gray
+        
+        // set multiple selection background view
+        var multiSelectBGView = UIView(frame: cell.frame)
+        multiSelectBGView.backgroundColor = UIColor.clearColor()
+        cell.multipleSelectionBackgroundView = multiSelectBGView
         
         return cell
     }
     
     
-    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
         
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? AETableViewCell
+        
+        if tableView.editing {
+            // don't push to article detail 
+            cell?.tintColor = UIColor.redColor()
+    
+        } else if !tableView.editing {
+            // perform segue
+            self.performSegueWithIdentifier("showArticleDetail", sender: self)
+            
+        }
+    
     }
-    */
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "showNewsStory" {
+        if segue.identifier == "showArticleDetail" {
             if let destination = segue.destinationViewController as? AESingleStoryViewController {
                 if let newsIndex = tableView.indexPathForSelectedRow()?.row {
                     
@@ -261,43 +151,74 @@ class AESelectEmotionTableViewController: UITableViewController {
         }
     }
     
-    /*
+    override func setEditing(editing: Bool, animated: Bool) {
+        
+        // call super to change button item title
+        super.setEditing(editing, animated: animated)
+        
+        // enter edit mode
+        if editing {
+            
+            // set table to edit mode
+            self.tableView.setEditing(editing, animated: animated)
+            
+            // remove left done button from nav bar
+            self.navigationItem.setLeftBarButtonItem(nil, animated: true)
+            
+            // show toolbar
+            self.navigationController?.setToolbarHidden(false, animated: true)
+            
+        } else if !editing { // exit edit mode
+            
+            // exit edit mode in table view
+            self.tableView.setEditing(editing, animated: animated)
+            
+            // add left done button to nav bar
+            self.navigationItem.setLeftBarButtonItem(self.doneButton, animated: true)
+            
+            // show toolbar
+            self.navigationController?.setToolbarHidden(true, animated: true)
+            
+        }
+        
+    }
+    
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+        // all cells in the table view should be editable
+        return true
     }
-    */
     
-    /*
+    
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        /*if editingStyle == .Delete {
-        // Delete the row from the data source
-        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            testData.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
-        else if editingStyle == .Insert {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }*/
     }
     
     
+    // swipe options method
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
-        // 1
+        
+        // Remove selected article cell from table view
         var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
-            let shareMenu = UIAlertController(title: nil, message: "Remoove From current List", preferredStyle: .ActionSheet)
+            let shareMenu = UIAlertController(title: nil, message: "Remove From current List", preferredStyle: .ActionSheet)
             
-            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
+                // remove article from data source
+                self.testData.removeAtIndex(indexPath.row)
+                // remove row from table
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
             shareMenu.addAction(twitterAction)
@@ -308,6 +229,8 @@ class AESelectEmotionTableViewController: UITableViewController {
         })
         
         shareAction.backgroundColor = UIColor.redColor()
+        
+        
         // 3
         var rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add to List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 4
@@ -353,5 +276,4 @@ class AESelectEmotionTableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     }
     */
-    
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0306542D1AD420D50024C433 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0306542C1AD420D50024C433 /* settings-25.png */; };
+		03231C9D1ADEEB5700A9231C /* AEReadingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03231C9C1ADEEB5700A9231C /* AEReadingListTableViewController.swift */; };
+		03231C9F1ADEF46000A9231C /* AESelectEmotionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */; };
 		033312171ACDAFD2008E5309 /* arkansas.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312121ACDAFD2008E5309 /* arkansas.png */; };
 		033312181ACDAFD2008E5309 /* cruz.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312131ACDAFD2008E5309 /* cruz.png */; };
 		033312191ACDAFD2008E5309 /* indiana.png in Resources */ = {isa = PBXBuildFile; fileRef = 033312141ACDAFD2008E5309 /* indiana.png */; };
@@ -22,13 +24,12 @@
 		03635AC61ABE237700ECE937 /* manager.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635ABE1ABE237700ECE937 /* manager.png */; };
 		03635AC71ABE237700ECE937 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635ABF1ABE237700ECE937 /* target.png */; };
 		03635AC81ABE237700ECE937 /* sucker.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635AC01ABE237700ECE937 /* sucker.png */; };
+		036743371AE0329F005D8A10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036743361AE0329F005D8A10 /* Images.xcassets */; };
 		0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383C6391AC4FFD100B27904 /* DWBubbleMenuButton.m */; };
 		03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D381ABCE181001B3736 /* AppDelegate.swift */; };
 		03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3C1ABCE181001B3736 /* Main.storyboard */; };
-		03E83D401ABCE181001B3736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3F1ABCE181001B3736 /* Images.xcassets */; };
 		03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D411ABCE181001B3736 /* LaunchScreen.xib */; };
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
-		03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */; };
 		03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		0306542C1AD420D50024C433 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
+		03231C9C1ADEEB5700A9231C /* AEReadingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEReadingListTableViewController.swift; sourceTree = "<group>"; };
+		03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESelectEmotionTableViewController.swift; sourceTree = "<group>"; };
 		033312121ACDAFD2008E5309 /* arkansas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkansas.png; sourceTree = "<group>"; };
 		033312131ACDAFD2008E5309 /* cruz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cruz.png; sourceTree = "<group>"; };
 		033312141ACDAFD2008E5309 /* indiana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indiana.png; sourceTree = "<group>"; };
@@ -61,18 +64,17 @@
 		03635ABE1ABE237700ECE937 /* manager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manager.png; sourceTree = "<group>"; };
 		03635ABF1ABE237700ECE937 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
 		03635AC01ABE237700ECE937 /* sucker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sucker.png; sourceTree = "<group>"; };
+		036743361AE0329F005D8A10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0383C6381AC4FFD100B27904 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		0383C6391AC4FFD100B27904 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		03E83D331ABCE181001B3736 /* Æffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Æffect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D371ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D381ABCE181001B3736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E83D3D1ABCE181001B3736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		03E83D3F1ABCE181001B3736 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		03E83D421ABCE181001B3736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		03E83D481ABCE181001B3736 /* ÆffectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ÆffectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D4D1ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
-		03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESelectEmotionTableViewController.swift; sourceTree = "<group>"; };
 		03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AETableViewCell.swift; path = ../AETableViewCell.swift; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
@@ -150,13 +152,14 @@
 			children = (
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
-				03E83D5A1ABCE502001B3736 /* AESelectEmotionTableViewController.swift */,
+				03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */,
 				13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */,
 				03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */,
+				03231C9C1ADEEB5700A9231C /* AEReadingListTableViewController.swift */,
 				03635AB81ABE093300ECE937 /* AEffect-Bridging-Header.h */,
+				036743361AE0329F005D8A10 /* Images.xcassets */,
 				0383C63B1AC4FFD400B27904 /* DWBubbleMenu */,
 				03635AC91ABE238000ECE937 /* Test Images */,
-				03E83D3F1ABCE181001B3736 /* Images.xcassets */,
 				03E83D411ABCE181001B3736 /* LaunchScreen.xib */,
 				03E83D361ABCE181001B3736 /* Supporting Files */,
 				13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */,
@@ -280,9 +283,9 @@
 				033312171ACDAFD2008E5309 /* arkansas.png in Resources */,
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
+				036743371AE0329F005D8A10 /* Images.xcassets in Resources */,
 				0333121B1ACDAFD2008E5309 /* plane.png in Resources */,
 				033312191ACDAFD2008E5309 /* indiana.png in Resources */,
-				03E83D401ABCE181001B3736 /* Images.xcassets in Resources */,
 				03635AAB1ABDF7F700ECE937 /* test.png in Resources */,
 				03635AC21ABE237700ECE937 /* night.png in Resources */,
 				03635AC71ABE237700ECE937 /* target.png in Resources */,
@@ -307,8 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */,
-				03E83D5B1ABCE502001B3736 /* AESelectEmotionTableViewController.swift in Sources */,
 				13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */,
+				03231C9D1ADEEB5700A9231C /* AEReadingListTableViewController.swift in Sources */,
+				03231C9F1ADEF46000A9231C /* AESelectEmotionTableViewController.swift in Sources */,
 				13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */,
 				03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
