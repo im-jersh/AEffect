@@ -17,7 +17,7 @@ class AEStory: NSObject {
     //var news_desk: String
     var picture_url: String
     //var caption: String
-    var article_url: String
+    //var article_url: String
     //var content_with_tags: String
     var content_without_tags: String
     /*
@@ -33,7 +33,7 @@ class AEStory: NSObject {
     /*pubdate: String, news_desk: String, picture_url: String, caption: String,*/
     /*, content_with_tags: String, content_without_tags: String*/
     , anger: String, surprise: String, sadness: String, joy: String, fear: String, excited: String, happy: String, worried: String*/
-    init(title: String, author: String,  article_url: String, pubdate:String, content_without_tags: String, picture_url: String) {
+    init(title: String, author: String, pubdate:String, content_without_tags: String, picture_url: String) {
         //self.article_id = article_id;
         //self.emotion = emotion
         self.title = title
@@ -42,7 +42,7 @@ class AEStory: NSObject {
         //self.news_desk = news_desk
         self.picture_url = picture_url
         //self.caption = caption
-        self.article_url = article_url
+        //self.article_url = article_url
         //self.content_with_tags = content_with_tags
         self.content_without_tags = content_without_tags
         /*
