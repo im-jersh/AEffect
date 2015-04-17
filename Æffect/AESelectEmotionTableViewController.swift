@@ -36,7 +36,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
 ////////////////////////////////////////////////////////////////////////////////////////
 /*Get news data from server*/
     
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=5"
+    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
     //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
     var stories: AEStories = AEStories()
     var selectedStory: AEStory?
