@@ -209,6 +209,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         // Configure the cell...
         
+        //this line is important if user Scroll the table view to fast, and the image will be replaced with other image, however, this line will set the image as a blank image if user Scroll to fast
+        cell.featuredImage.image = UIImage(named: "noimage.jpg")
         
          var imgURL: NSURL = NSURL(string: cellData.picture_url)!
             let request: NSURLRequest = NSURLRequest(URL: imgURL)
