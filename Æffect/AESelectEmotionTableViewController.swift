@@ -36,8 +36,9 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
 ////////////////////////////////////////////////////////////////////////////////////////
 /*Get news data from server*/
     
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
-    var stories: AEStories = AEStories ()
+    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=5"
+    //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
+    var stories: AEStories = AEStories()
     var selectedStory: AEStory?
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -48,9 +49,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         
         stories.load(urlString) {
-            (companies, errorString) -> Void in
+            (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
-                // can do something about error here
                 println(unwrappedErrorString)
             } else {
                 self.tableView.reloadData()
@@ -207,7 +207,6 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         let cellData = stories.story[indexPath.row]
         
-        
         // Configure the cell...
         
         
@@ -221,11 +220,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     }
             })
         
-        //println(cellData.picture_url)
-
-        //let img = UIImage(named: picture_url)
+        println(cellData.picture_url)
         cell.clipsToBounds = true;
-        //cell.featuredImage.image = img
         cell.headline.text = cellData.title
         
         let author = cellData.author.uppercaseString
