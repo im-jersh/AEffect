@@ -90,7 +90,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     }
 
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
-        println("back to main feed")
+        // println("back to main feed")
     }
     
     
