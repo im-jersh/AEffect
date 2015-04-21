@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate,UIScrollViewDelegate {
     
     struct AEData {
         var emoji: String
@@ -32,17 +32,17 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     
     var upBubbleMenu : DWBubbleMenuButton?
     
+    var pull_action : CBStoreHouseRefreshControl?
     
-    
-////////////////////////////////////////////////////////////////////////////////////////
-/*Get news data from server*/
+    ////////////////////////////////////////////////////////////////////////////////////////
+    /*Get news data from server*/
     
     var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
     //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
     var stories: AEStories = AEStories()
     var selectedStory: AEStory?
-
-////////////////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         self.tableView.backgroundColor = UIColor.whiteColor()
         
         
+        //creat pull to refresh
+        pull_action = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: "refreshTriggered:", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: false, internalAnimationFactor: 0.5);
+        //
+        
         // add bottom bubble menu
         var bubbleMenu = self.createHomeButtonView(99)
         
@@ -85,10 +89,40 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
     }
     
+    
+    ///////////////////////////////
+    //Hang CUI April/21/2015
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.pull_action?.scrollViewDidScroll()
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.pull_action?.scrollViewDidEndDragging()
+    }
+    
+    func refreshTriggered(sender: AnyObject){
+        var timer = NSTimer(timeInterval: 10.0, target: self, selector: Selector("finishRefreshControl:"), userInfo: nil , repeats: false)
+        timer.fire()
+        
+    }
+    
+    func finishRefreshControl (timer: NSTimer)
+    {
+        self.pull_action?.finishingLoading()
+    }
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    ///////////////////////////////
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.view.addSubview(upBubbleMenu!)
     }
-
+    
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
         // println("back to main feed")
     }
@@ -127,7 +161,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         label.layer.cornerRadius = label.frame.size.height / 2.0
         label.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
         label.clipsToBounds = true
-
+        
         return label
     }
     
@@ -219,7 +253,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         }
         
         ///////////////////////////
-
+        
         
         
     }
@@ -249,19 +283,19 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         //this line is important if user Scroll the table view to fast, and the image will be replaced with other image, however, this line will set the image as a blank image if user Scroll to fast
         cell.featuredImage.sd_setImageWithURL(NSURL(string: cellData.picture_url as String)!, placeholderImage: UIImage(named: "noimage.jpg"))
-
+        
         
         /*cell.featuredImage.image = UIImage(named: "noimage.jpg")
         
-         var imgURL: NSURL = NSURL(string: cellData.picture_url)!
-            let request: NSURLRequest = NSURLRequest(URL: imgURL)
-            NSURLConnection.sendAsynchronousRequest(
-                request, queue: NSOperationQueue.mainQueue(),
-                completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-                    if error == nil {
-                        cell.featuredImage.image = UIImage(data: data)
-                    }
-            })
+        var imgURL: NSURL = NSURL(string: cellData.picture_url)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        NSURLConnection.sendAsynchronousRequest(
+        request, queue: NSOperationQueue.mainQueue(),
+        completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+        if error == nil {
+        cell.featuredImage.image = UIImage(data: data)
+        }
+        })
         
         println(cellData.picture_url)
         */
@@ -277,19 +311,19 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         /*
         if (cellData.emotion == "joy") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
         } else if (cellData.emotion == "excitement") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
         } else if (cellData.emotion == "sadness") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
         } else if (cellData.emotion == "annoyed") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
         } else if (cellData.emotion == "anger") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
         } else if (cellData.emotion == "fear") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
         } else {
-            cell.emotionColor.backgroundColor = UIColor.blackColor()
+        cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
         */
         
@@ -300,7 +334,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
-        
+    
     }
     */
     
