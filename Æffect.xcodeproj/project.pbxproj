@@ -52,6 +52,9 @@
 		136F1AA41AE5D67500222350 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A931AE5D67500222350 /* UIImageView+WebCache.m */; };
 		136F1AA51AE5D67500222350 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A951AE5D67500222350 /* UIView+WebCacheOperation.m */; };
 		136F1AA71AE5D79900222350 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136F1AA61AE5D79900222350 /* ImageIO.framework */; };
+		139B278F1AE6285F00707ECC /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278C1AE6285F00707ECC /* BarItem.m */; };
+		139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */; };
+		139B27921AE6288C00707ECC /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 139B27911AE6288C00707ECC /* storehouse.plist */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
@@ -136,6 +139,11 @@
 		136F1A941AE5D67500222350 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		136F1A951AE5D67500222350 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		136F1AA61AE5D79900222350 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		139B278B1AE6285F00707ECC /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		139B278C1AE6285F00707ECC /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		139B278D1AE6285F00707ECC /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
+		139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
+		139B27911AE6288C00707ECC /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
@@ -214,6 +222,8 @@
 		03E83D351ABCE181001B3736 /* Æffect */ = {
 			isa = PBXGroup;
 			children = (
+				139B27911AE6288C00707ECC /* storehouse.plist */,
+				139B278A1AE6285F00707ECC /* CBStoreHouseRefreshControl */,
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
 				03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */,
@@ -299,6 +309,17 @@
 				136F1A951AE5D67500222350 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		139B278A1AE6285F00707ECC /* CBStoreHouseRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				139B278B1AE6285F00707ECC /* BarItem.h */,
+				139B278C1AE6285F00707ECC /* BarItem.m */,
+				139B278D1AE6285F00707ECC /* CBStoreHouseRefreshControl.h */,
+				139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */,
+			);
+			path = CBStoreHouseRefreshControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +415,7 @@
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
 				036743371AE0329F005D8A10 /* Images.xcassets in Resources */,
+				139B27921AE6288C00707ECC /* storehouse.plist in Resources */,
 				0333121B1ACDAFD2008E5309 /* plane.png in Resources */,
 				033312191ACDAFD2008E5309 /* indiana.png in Resources */,
 				03635AAB1ABDF7F700ECE937 /* test.png in Resources */,
@@ -444,6 +466,8 @@
 				136F1A981AE5D67500222350 /* SDImageCache.m in Sources */,
 				136F1A9F1AE5D67500222350 /* UIButton+WebCache.m in Sources */,
 				136F1A971AE5D67500222350 /* NSData+ImageContentType.m in Sources */,
+				139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */,
+				139B278F1AE6285F00707ECC /* BarItem.m in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
 				03A1AE151AE61A4C0094BB56 /* AESettingsViewController.swift in Sources */,
 			);
