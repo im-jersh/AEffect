@@ -71,7 +71,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         
         //creat pull to refresh
-        pull_action = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: "refreshTriggered:", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: false, internalAnimationFactor: 0.5);
+        pull_action = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: "refreshTriggered:", plist: "AEPull", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: false, internalAnimationFactor: 0.5);
         //
         
         // add bottom bubble menu
@@ -220,7 +220,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     func emotionSelected(sender: UIButton) {
         
         // DEBUG
-        println("Button tapped, tag: \(sender.tag)")
+        //println("Button tapped, tag: \(sender.tag)")
         
         // adjusts tint color of navigation bar according to selected emotion
         self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
@@ -249,7 +249,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         //println(temp_emotion)
         
         urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=10"
-        println(urlString)
+        //println(urlString)
         
         stories.load(urlString) {
             (news, errorString) -> Void in
@@ -290,7 +290,35 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         // Configure the cell...
         
         //this line is important if user Scroll the table view to fast, and the image will be replaced with other image, however, this line will set the image as a blank image if user Scroll to fast
-        cell.featuredImage.sd_setImageWithURL(NSURL(string: cellData.picture_url as String)!, placeholderImage: UIImage(named: "noimage.jpg"))
+        
+        var picURL = ""
+        var tempURL = ""
+        println(cellData.picture_url)
+        
+        if  cellData.picture_url != "null" {
+            var pictureURL = cellData.picture_url
+            var length = count(pictureURL) - 14
+            
+            var tail_range = Range(start: advance(pictureURL.startIndex, length), end: pictureURL.endIndex)
+            var tail_string = pictureURL.substringWithRange(tail_range)
+            println (tail_string)
+            
+            if tail_string != "ticleLarge.jpg" {
+                var range = Range(start: pictureURL.startIndex, end: advance(pictureURL.startIndex, length))
+                tempURL = pictureURL.substringWithRange(range)
+            }
+            else {
+                var range = Range(start: pictureURL.startIndex, end: advance(pictureURL.startIndex, length-2))
+                tempURL = pictureURL.substringWithRange(range)
+            }
+            picURL = "\(tempURL)thumbWide.jpg"
+
+        }
+        else {
+            picURL = cellData.picture_url
+        }
+        println(picURL)
+        cell.featuredImage.sd_setImageWithURL(NSURL(string: picURL as String)!, placeholderImage: UIImage(named: "noimage.jpg"))
         
         
         /*cell.featuredImage.image = UIImage(named: "noimage.jpg")
@@ -304,8 +332,6 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         cell.featuredImage.image = UIImage(data: data)
         }
         })
-        
-        println(cellData.picture_url)
         */
         
         cell.clipsToBounds = true;
