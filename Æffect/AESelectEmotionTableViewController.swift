@@ -14,7 +14,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         var emoji: String
         var bgColor: UIColor
     }
-    
+    let emojiArray = ["😄", "😳", "😢", "😒", "😠", "😖"]
     let emotionArray = ["joy", "excitement", "sadness", "annoyed", "anger", "fear"]
     
     let aedictionary: [String: AEData] = [
@@ -42,7 +42,6 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     var selectedStory: AEStory?
 
 ////////////////////////////////////////////////////////////////////////////////////////
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +120,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         return label
     }
     
+    
+    
     // Create main menu button
     func createHomeButtonViewFromText(text: String) -> UILabel {
         
@@ -164,7 +165,6 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         return buttons
     }
     
-    
     // Target method for select submenu button
     func emotionSelected(sender: UIButton) {
         
@@ -176,14 +176,16 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         self.title = emotionArray[sender.tag].capitalizedString
         
-        //println("Button Title Label: \(sender.titleLabel!.text)")
-        // change menu label text to match selection
-        for subview in self.navigationController!.view.subviews as! [UIView] {
-            if var mainButton = subview as? DWBubbleMenuButton {
-                mainButton.homeButtonView = self.createHomeButtonViewFromText(sender.titleLabel!.text!)
-                self.navigationController?.view.addSubview(mainButton)
-            }
-        }
+        // temporary UILabel to adjust homeButtonView properties (1 & 2)
+        var temp = self.upBubbleMenu!.homeButtonView as! UILabel
+        
+        // Set text to selected emoji
+        temp.text = emojiArray[sender.tag]
+        
+        // Set color to corresponding emotion color
+        temp.backgroundColor = sender.backgroundColor
+        
+        self.upBubbleMenu!.homeButtonView = temp
         
     }
     
