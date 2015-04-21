@@ -15,13 +15,14 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         var bgColor: UIColor
     }
     let emojiArray = ["😄", "😳", "😢", "😒", "😠", "😖"]
-    let emotionArray = ["joy", "excitement", "sadness", "annoyed", "anger", "fear"]
+    let emotionArray = ["joy", "surprise", "sadness", "worried", "anger", "fear"]
     
     let aedictionary: [String: AEData] = [
+        
         "joy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
-        "excitement": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
+        "surprise": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
         "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
-        "annoyed": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
+        "worried": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
         "anger": AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)),
         "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
     ]
@@ -106,9 +107,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     // Create main menu button
     func createHomeButtonView(inputemotion: Int) -> UILabel {
         
+        
         var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
         if (inputemotion == 99) {
-            label.text = "Æ"
+            label.text = "😄"
         }
         
         label.textColor = UIColor.whiteColor()
