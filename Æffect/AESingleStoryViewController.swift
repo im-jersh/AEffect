@@ -31,7 +31,23 @@ class AESingleStoryViewController: UIViewController {
         authorLabel.text = "By: \(newsAuthor)"
         dateLabel.text = "Last Update: \(newsDate)"
         newsText.text = newsStory
-        newsImageView.image = UIImage(named: newsImage)
+        //newsImageView.image = UIImage(named: newsImage)
+        
+       
+            var imgURL: NSURL = NSURL(string: newsImage)!
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
+            NSURLConnection.sendAsynchronousRequest(
+                request, queue: NSOperationQueue.mainQueue(),
+                completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+                    if error == nil {
+                        self.newsImageView.image = UIImage(data: data)
+                    }
+            })
+        
+        
+        //println(cellData.picture_url)
+        
+
         
     }
     

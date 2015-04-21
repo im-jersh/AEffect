@@ -10,5 +10,7 @@
 #define _ffect_AEffect_Bridging_Header_h
 
 #import "DWBubbleMenuButton.h"
+#include "UIImageView+WebCache.h"
+
 
 #endif

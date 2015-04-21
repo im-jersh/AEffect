@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ydV-9L-KCW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ydV-9L-KCW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -35,7 +35,7 @@
                                                 </mask>
                                             </variation>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test.png" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-xi-96a">
                                             <rect key="frame" x="16" y="18" width="149" height="102"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="iH8-xi-96a" secondAttribute="height" multiplier="164:113" id="MCU-a4-OJq"/>
@@ -143,7 +143,7 @@
                                                 <color key="textColor" red="0.27575152850000001" green="0.27575152850000001" blue="0.27575152850000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hD5-NK-qrf">
+                                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hD5-NK-qrf">
                                                 <rect key="frame" x="0.0" y="101" width="600" height="413"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="176" id="Y8v-QR-fjv"/>
@@ -480,6 +480,7 @@
     </scenes>
     <resources>
         <image name="Reading List" width="33" height="33"/>
+        <image name="noimage.jpg" width="506" height="340"/>
         <image name="test.png" width="592" height="395"/>
     </resources>
 </document>
