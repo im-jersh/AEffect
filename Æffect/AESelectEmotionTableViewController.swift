@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     struct AEData {
         var emoji: String
@@ -287,6 +287,32 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                 }
             }
         }
+        
+        if segue.identifier == "settingsPopover" {
+            if let destination = segue.destinationViewController as? AESettingsViewController {
+                if var popOver = destination.popoverPresentationController as UIPopoverPresentationController? {
+                    //popOver.popoverLayoutMargins = UIEdgeInsets(top: 100.0, left: 20.0, bottom: 400.0, right: 20.0)
+                    popOver.delegate = self
+                }
+            }
+        }
+        
+        
+//        // Assuming you've hooked this all up in a Storyboard with a popover presentation style
+//        if ([segue.identifier isEqualToString:@"showPopover"]) {
+//            UINavigationController *destNav = segue.destinationViewController;
+//            PopoverContentsViewController *vc = destNav.viewControllers.firstObject;
+//            
+//            // This is the important part
+//            UIPopoverPresentationController *popPC = destNav.popoverPresentationController;
+//            popPC.delegate = self;
+//        }
+        
+        
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
     }
     
     /*
