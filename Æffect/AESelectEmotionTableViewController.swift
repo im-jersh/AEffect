@@ -29,6 +29,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     
     //var defaultEmotion: String = self.emotionArray[0]
     
+    var currentEmotionColor : UIColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
     
     var upBubbleMenu : DWBubbleMenuButton?
     
@@ -237,6 +238,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         self.upBubbleMenu!.homeButtonView = temp
         
+        self.currentEmotionColor = sender.backgroundColor!
+        
         
         ///////////////////////////
         //Hang CUI - April/20/2015
@@ -312,7 +315,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         cell.author.text = "By \(author)"
         cell.pubDate.text = cellData.pubdate
         
-        //cell.emotionColor.backgroundColor = aedictionary[cellData["emotion"]!]?.bgColor
+        cell.emotionColor.backgroundColor = self.currentEmotionColor
         
         /*
         if (cellData.emotion == "joy") {
@@ -358,6 +361,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     destination.newsStory = newsH.content_without_tags
                     destination.newsDate = newsH.pubdate
                     destination.newsAuthor = newsH.author
+                    destination.title = self.title
                 }
             }
         }
