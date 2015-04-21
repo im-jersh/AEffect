@@ -35,6 +35,8 @@
 		133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5531AE0425E007A8D01 /* AEStory.swift */; };
 		133DC5561AE04278007A8D01 /* AEStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5551AE04278007A8D01 /* AEStories.swift */; };
 		133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5571AE044D9007A8D01 /* AETestData.swift */; };
+		1342B6521AE6E2C40008D04F /* AKTA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1342B6511AE6E2C40008D04F /* AKTA.plist */; };
+		1342B6541AE6E2F00008D04F /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1342B6531AE6E2F00008D04F /* storehouse.plist */; };
 		136F1A961AE5D67500222350 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A761AE5D67500222350 /* MKAnnotationView+WebCache.m */; };
 		136F1A971AE5D67500222350 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A781AE5D67500222350 /* NSData+ImageContentType.m */; };
 		136F1A981AE5D67500222350 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A7A1AE5D67500222350 /* SDImageCache.m */; };
@@ -54,7 +56,6 @@
 		136F1AA71AE5D79900222350 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136F1AA61AE5D79900222350 /* ImageIO.framework */; };
 		139B278F1AE6285F00707ECC /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278C1AE6285F00707ECC /* BarItem.m */; };
 		139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */; };
-		139B27921AE6288C00707ECC /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 139B27911AE6288C00707ECC /* storehouse.plist */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
@@ -105,6 +106,8 @@
 		133DC5531AE0425E007A8D01 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
 		133DC5551AE04278007A8D01 /* AEStories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStories.swift; sourceTree = "<group>"; };
 		133DC5571AE044D9007A8D01 /* AETestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AETestData.swift; sourceTree = "<group>"; };
+		1342B6511AE6E2C40008D04F /* AKTA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AKTA.plist; sourceTree = "<group>"; };
+		1342B6531AE6E2F00008D04F /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		136F1A751AE5D67500222350 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		136F1A761AE5D67500222350 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		136F1A771AE5D67500222350 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -143,7 +146,6 @@
 		139B278C1AE6285F00707ECC /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
 		139B278D1AE6285F00707ECC /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
 		139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
-		139B27911AE6288C00707ECC /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
@@ -222,7 +224,8 @@
 		03E83D351ABCE181001B3736 /* Æffect */ = {
 			isa = PBXGroup;
 			children = (
-				139B27911AE6288C00707ECC /* storehouse.plist */,
+				1342B6511AE6E2C40008D04F /* AKTA.plist */,
+				1342B6531AE6E2F00008D04F /* storehouse.plist */,
 				139B278A1AE6285F00707ECC /* CBStoreHouseRefreshControl */,
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
@@ -410,12 +413,13 @@
 				03635AC61ABE237700ECE937 /* manager.png in Resources */,
 				03635AC11ABE237700ECE937 /* hackers.png in Resources */,
 				03635AC41ABE237700ECE937 /* cord-cutters.png in Resources */,
+				1342B6541AE6E2F00008D04F /* storehouse.plist in Resources */,
 				0333121A1ACDAFD2008E5309 /* menendez.png in Resources */,
 				033312171ACDAFD2008E5309 /* arkansas.png in Resources */,
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
 				036743371AE0329F005D8A10 /* Images.xcassets in Resources */,
-				139B27921AE6288C00707ECC /* storehouse.plist in Resources */,
+				1342B6521AE6E2C40008D04F /* AKTA.plist in Resources */,
 				0333121B1ACDAFD2008E5309 /* plane.png in Resources */,
 				033312191ACDAFD2008E5309 /* indiana.png in Resources */,
 				03635AAB1ABDF7F700ECE937 /* test.png in Resources */,
