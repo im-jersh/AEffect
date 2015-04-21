@@ -423,7 +423,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="article" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="article" rowHeight="139" id="PFd-pA-XQf" customClass="AETableViewCell" customModule="Æffect" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="article" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="readingListArticle" rowHeight="139" id="PFd-pA-XQf" customClass="AETableViewCell" customModule="Æffect" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFd-pA-XQf" id="aQH-pY-9EM">
                                     <autoresizingMask key="autoresizingMask"/>
