@@ -109,16 +109,25 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         
         var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        if (inputemotion == 99) {
-            label.text = "😄"
-        }
-        
+        /*
+        label.text = "Æ"
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
         label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
         label.clipsToBounds = true
+        */
         
+        //Hang CUI April/20/2015
+        //change default Æ buttom to 😄 buttom
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        self.title = emotionArray[0].capitalizedString
+        label.text = "😄"
+        label.textAlignment = NSTextAlignment.Center
+        label.layer.cornerRadius = label.frame.size.height / 2.0
+        label.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        label.clipsToBounds = true
+
         return label
     }
     
