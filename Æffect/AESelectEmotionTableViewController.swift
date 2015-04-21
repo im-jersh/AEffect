@@ -36,7 +36,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
 ////////////////////////////////////////////////////////////////////////////////////////
 /*Get news data from server*/
     
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
+    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
     //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
     var stories: AEStories = AEStories()
     var selectedStory: AEStory?
@@ -186,6 +186,30 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         temp.backgroundColor = sender.backgroundColor
         
         self.upBubbleMenu!.homeButtonView = temp
+        
+        
+        ///////////////////////////
+        //Hang CUI - April/20/2015
+        //this part is trying to change the info when a emotion button clicked
+        
+        var temp_emotion = emotionArray[sender.tag]
+        //println(temp_emotion)
+        
+        urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=10"
+        println(urlString)
+        
+        stories.load(urlString) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            } else {
+                self.tableView.reloadData()
+            }
+        }
+        
+        ///////////////////////////
+
+        
         
     }
     
