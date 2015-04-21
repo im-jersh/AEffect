@@ -8,40 +8,42 @@
 
 import UIKit
 
-class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class AESelectEmotionTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate,UIScrollViewDelegate {
     
     struct AEData {
         var emoji: String
         var bgColor: UIColor
     }
     let emojiArray = ["😄", "😳", "😢", "😒", "😠", "😖"]
-    let emotionArray = ["joy", "excitement", "sadness", "annoyed", "anger", "fear"]
+    let emotionArray = ["joy", "surprise", "sadness", "worried", "anger", "fear"]
     
     let aedictionary: [String: AEData] = [
+        
         "joy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
-        "excitement": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
+        "surprise": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
         "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
-        "annoyed": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
+        "worried": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
         "anger": AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)),
         "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
     ]
     
     //var defaultEmotion: String = self.emotionArray[0]
     
+    var currentEmotionColor : UIColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
     
     var upBubbleMenu : DWBubbleMenuButton?
     
+    var pull_action : CBStoreHouseRefreshControl?
     
+    ////////////////////////////////////////////////////////////////////////////////////////
+    /*Get news data from server*/
     
-////////////////////////////////////////////////////////////////////////////////////////
-/*Get news data from server*/
-    
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
+    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
     //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
     var stories: AEStories = AEStories()
     var selectedStory: AEStory?
-
-////////////////////////////////////////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         self.tableView.backgroundColor = UIColor.whiteColor()
         
         
+        //creat pull to refresh
+        pull_action = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: "refreshTriggered:", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: false, internalAnimationFactor: 0.5);
+        //
+        
         // add bottom bubble menu
         var bubbleMenu = self.createHomeButtonView(99)
         
@@ -84,10 +90,45 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
     }
     
+    
+    ///////////////////////////////
+    //Hang CUI April/21/2015
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.pull_action?.scrollViewDidScroll()
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.pull_action?.scrollViewDidEndDragging()
+    }
+    
+    func refreshTriggered(sender: AnyObject){
+        var timer = NSTimer(timeInterval: 10.0, target: self, selector: Selector("finishRefreshControl:"), userInfo: nil , repeats: false)
+        timer.fire()
+        
+    }
+    
+    func finishRefreshControl (timer: NSTimer)
+    {
+        let delay = 2 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.pull_action?.finishingLoading()
+        }
+        
+    }
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    ///////////////////////////////
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.view.addSubview(upBubbleMenu!)
     }
-
+    
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
         // println("back to main feed")
     }
@@ -106,15 +147,25 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     // Create main menu button
     func createHomeButtonView(inputemotion: Int) -> UILabel {
         
-        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
-        if (inputemotion == 99) {
-            label.text = "Æ"
-        }
         
+        var label : UILabel = UILabel(frame: CGRectMake(0.0, 0.0, 60.0, 60.0))
+        /*
+        label.text = "Æ"
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         label.layer.cornerRadius = label.frame.size.height / 2.0
         label.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
+        label.clipsToBounds = true
+        */
+        
+        //Hang CUI April/20/2015
+        //change default Æ buttom to 😄 buttom
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        self.title = emotionArray[0].capitalizedString
+        label.text = "😄"
+        label.textAlignment = NSTextAlignment.Center
+        label.layer.cornerRadius = label.frame.size.height / 2.0
+        label.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
         label.clipsToBounds = true
         
         return label
@@ -187,6 +238,32 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         self.upBubbleMenu!.homeButtonView = temp
         
+        self.currentEmotionColor = sender.backgroundColor!
+        
+        
+        ///////////////////////////
+        //Hang CUI - April/20/2015
+        //this part is trying to change the info when a emotion button clicked
+        
+        var temp_emotion = emotionArray[sender.tag]
+        //println(temp_emotion)
+        
+        urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=10"
+        println(urlString)
+        
+        stories.load(urlString) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            } else {
+                self.tableView.reloadData()
+            }
+        }
+        
+        ///////////////////////////
+        
+        
+        
     }
     
     // MARK: - Table view data source
@@ -214,19 +291,19 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         //this line is important if user Scroll the table view to fast, and the image will be replaced with other image, however, this line will set the image as a blank image if user Scroll to fast
         cell.featuredImage.sd_setImageWithURL(NSURL(string: cellData.picture_url as String)!, placeholderImage: UIImage(named: "noimage.jpg"))
-
+        
         
         /*cell.featuredImage.image = UIImage(named: "noimage.jpg")
         
-         var imgURL: NSURL = NSURL(string: cellData.picture_url)!
-            let request: NSURLRequest = NSURLRequest(URL: imgURL)
-            NSURLConnection.sendAsynchronousRequest(
-                request, queue: NSOperationQueue.mainQueue(),
-                completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-                    if error == nil {
-                        cell.featuredImage.image = UIImage(data: data)
-                    }
-            })
+        var imgURL: NSURL = NSURL(string: cellData.picture_url)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        NSURLConnection.sendAsynchronousRequest(
+        request, queue: NSOperationQueue.mainQueue(),
+        completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+        if error == nil {
+        cell.featuredImage.image = UIImage(data: data)
+        }
+        })
         
         println(cellData.picture_url)
         */
@@ -238,23 +315,23 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         cell.author.text = "By \(author)"
         cell.pubDate.text = cellData.pubdate
         
-        //cell.emotionColor.backgroundColor = aedictionary[cellData["emotion"]!]?.bgColor
+        cell.emotionColor.backgroundColor = self.currentEmotionColor
         
         /*
         if (cellData.emotion == "joy") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
         } else if (cellData.emotion == "excitement") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
         } else if (cellData.emotion == "sadness") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
         } else if (cellData.emotion == "annoyed") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
         } else if (cellData.emotion == "anger") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
         } else if (cellData.emotion == "fear") {
-            cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+        cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
         } else {
-            cell.emotionColor.backgroundColor = UIColor.blackColor()
+        cell.emotionColor.backgroundColor = UIColor.blackColor()
         }
         */
         
@@ -265,7 +342,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
-        
+    
     }
     */
     
@@ -284,6 +361,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     destination.newsStory = newsH.content_without_tags
                     destination.newsDate = newsH.pubdate
                     destination.newsAuthor = newsH.author
+                    destination.title = self.title
                 }
             }
         }
