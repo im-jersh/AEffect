@@ -26,6 +26,7 @@
 		03635AC81ABE237700ECE937 /* sucker.png in Resources */ = {isa = PBXBuildFile; fileRef = 03635AC01ABE237700ECE937 /* sucker.png */; };
 		036743371AE0329F005D8A10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036743361AE0329F005D8A10 /* Images.xcassets */; };
 		0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0383C6391AC4FFD100B27904 /* DWBubbleMenuButton.m */; };
+		03A1AE151AE61A4C0094BB56 /* AESettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1AE141AE61A4C0094BB56 /* AESettingsViewController.swift */; };
 		03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D381ABCE181001B3736 /* AppDelegate.swift */; };
 		03E83D3E1ABCE181001B3736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D3C1ABCE181001B3736 /* Main.storyboard */; };
 		03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D411ABCE181001B3736 /* LaunchScreen.xib */; };
@@ -91,6 +92,7 @@
 		036743361AE0329F005D8A10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0383C6381AC4FFD100B27904 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		0383C6391AC4FFD100B27904 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
+		03A1AE141AE61A4C0094BB56 /* AESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AESettingsViewController.swift; path = ../AESettingsViewController.swift; sourceTree = "<group>"; };
 		03E83D331ABCE181001B3736 /* Æffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Æffect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D371ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D381ABCE181001B3736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
 				03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */,
+				03A1AE141AE61A4C0094BB56 /* AESettingsViewController.swift */,
 				133DC5531AE0425E007A8D01 /* AEStory.swift */,
 				133DC5551AE04278007A8D01 /* AEStories.swift */,
 				13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */,
@@ -466,6 +469,7 @@
 				139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */,
 				139B278F1AE6285F00707ECC /* BarItem.m in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
+				03A1AE151AE61A4C0094BB56 /* AESettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
