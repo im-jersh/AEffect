@@ -487,7 +487,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     //table view swipe from the right to left option
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         // 1
-        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark    \u{000A}As\u{000A}U/Read" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
             let shareMenu = UIAlertController(title: nil, message: "Share", preferredStyle: .ActionSheet)
             
@@ -501,7 +501,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             self.presentViewController(shareMenu, animated: true, completion: nil)
         })
         
-        shareAction.backgroundColor = UIColor.grayColor()
+        markAction.backgroundColor = UIColor.grayColor()
         
         // 3
         var addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add    \u{000A}List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
@@ -540,10 +540,9 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             
             
         })
-        
         deleteAction.backgroundColor = UIColor.darkGrayColor()
         
-        return [shareAction,addAction, deleteAction]
+        return [markAction,addAction]
         //return [shareAction,addAction, deleteAction,markAction]
     }
     
