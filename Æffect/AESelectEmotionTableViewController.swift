@@ -282,7 +282,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         var temp_emotion = emotionArray[sender.tag]
         //println(temp_emotion)
         
-        urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=10"
+        urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=0"
         //println(urlString)
         
         stories.load(urlString) {
