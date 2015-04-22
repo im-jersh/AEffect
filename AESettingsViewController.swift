@@ -9,15 +9,29 @@
 import UIKit
 
 class AESettingsViewController: UITableViewController {
+    
+    struct AEData {
+        var emoji: String
+        var bgColor: UIColor
+    }
+    let emojiArray = ["😄", "😳", "😢", "😒", "😠", "😖"]
+    let emotionArray = ["happy", "surprise", "sadness", "worried", "anger", "fear"]
+    
+    @IBOutlet weak var defaultEmotionButton: UIButton!
+    let aedictionary: [String: AEData] = [
+        
+        "happy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
+        "surprise": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
+        "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
+        "worried": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
+        "anger": AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)),
+        "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8))
+    ]
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // set popover content size
         let bounds = UIScreen.mainScreen().bounds
@@ -34,12 +48,33 @@ class AESettingsViewController: UITableViewController {
         
         self.preferredContentSize = CGSizeMake(width, height)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let emotion = defaults.stringForKey("emotion"){
+            let idx = find(emotionArray, emotion)!
+            defaultEmotionButton.setTitle(emotionArray[idx].capitalizedString + " " + emojiArray[idx], forState: UIControlState.Normal)
+            defaultEmotionButton.setTitleColor(aedictionary[emotionArray[idx]]!.bgColor, forState: UIControlState.Normal)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func switchDefaultEmotion(sender: UIButton!) {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let tempArray: [String] = sender.titleLabel!.text!.componentsSeparatedByString(" ")
+        let idx = (find(emojiArray, tempArray[1])! + 1) % emojiArray.count
+        
+        defaults.setObject(emotionArray[idx], forKey: "emotion")
+        let newString = emotionArray[idx].capitalizedString + " " + emojiArray[idx]
+        
+        sender.setTitle(newString, forState: UIControlState.Normal)
+        sender.setTitleColor(aedictionary[emotionArray[idx]]!.bgColor, forState: UIControlState.Normal)
+        
     }
 
     // MARK: - Table view data source
@@ -55,60 +90,5 @@ class AESettingsViewController: UITableViewController {
         // Return the number of rows in the section.
         return 1
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

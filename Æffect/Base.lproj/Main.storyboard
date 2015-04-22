@@ -173,6 +173,9 @@
                                                         <color key="titleColor" red="0.94117647058823528" green="0.81960784313725488" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="switchDefaultEmotion:" destination="K8q-wt-BIN" eventType="touchUpInside" id="I1k-S4-2Ox"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -194,6 +197,9 @@
                             <outlet property="delegate" destination="K8q-wt-BIN" id="b0v-Zs-zkL"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="defaultEmotionButton" destination="atu-t9-K5q" id="KBe-OB-blc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYz-Lf-Kdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
