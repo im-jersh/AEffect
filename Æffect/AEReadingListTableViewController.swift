@@ -234,20 +234,22 @@ class AEReadingListTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
+        /*
         if editingStyle == .Delete {
             // Delete the row from the data source
             testData.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+        }*/
     }
     
     
     // swipe options method
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         
+        
+        /*
         // Remove selected article cell from table view
         var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
@@ -286,8 +288,33 @@ class AEReadingListTableViewController: UITableViewController {
             self.presentViewController(rateMenu, animated: true, completion: nil)
         })
         // 5
-        rateAction.backgroundColor = UIColor.blueColor()
-        return [shareAction,rateAction]
+        rateAction.backgroundColor = UIColor.blueColor()*/
+        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark    \u{000A}As\u{000A}U/Read" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 2
+            let shareMenu = UIAlertController(title: nil, message: "Share", preferredStyle: .ActionSheet)
+            
+            let whatever = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            shareMenu.addAction(whatever)
+            shareMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+        })
+        markAction.backgroundColor = UIColor.grayColor()
+
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
+            
+            self.testData.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+           // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            
+        })
+        deleteAction.backgroundColor = UIColor.lightGrayColor()
+
+        return [markAction,deleteAction]
     }
     
     
