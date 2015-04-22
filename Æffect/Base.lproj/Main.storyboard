@@ -101,7 +101,7 @@
                                 <segue destination="LZw-Pq-8hB" kind="presentation" identifier="showReadingList" id="4C0-0U-TYY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="mOp-YV-4vO">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="mOp-YV-4vO">
                             <connections>
                                 <segue destination="K8q-wt-BIN" kind="popoverPresentation" identifier="settingsPopover" popoverAnchorBarButtonItem="mOp-YV-4vO" id="IHG-SF-MdK">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -578,6 +578,7 @@
     </scenes>
     <resources>
         <image name="Reading List" width="33" height="33"/>
+        <image name="Settings" width="29" height="29"/>
         <image name="noimage.jpg" width="506" height="340"/>
         <image name="test.png" width="592" height="395"/>
     </resources>
