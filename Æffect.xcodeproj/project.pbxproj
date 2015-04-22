@@ -32,6 +32,7 @@
 		03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D411ABCE181001B3736 /* LaunchScreen.xib */; };
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
 		03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */; };
+		13160BEA1AE804E8004A7052 /* AEReadingListTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13160BE91AE804E8004A7052 /* AEReadingListTestData.swift */; };
 		1324FCD61AE7134E00ED490A /* AEPull.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1324FCD51AE7134E00ED490A /* AEPull.plist */; };
 		133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5531AE0425E007A8D01 /* AEStory.swift */; };
 		133DC5561AE04278007A8D01 /* AEStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5551AE04278007A8D01 /* AEStories.swift */; };
@@ -102,6 +103,7 @@
 		03E83D4D1ABCE181001B3736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
 		03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AETableViewCell.swift; path = ../AETableViewCell.swift; sourceTree = "<group>"; };
+		13160BE91AE804E8004A7052 /* AEReadingListTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AEReadingListTestData.swift; path = ../AEReadingListTestData.swift; sourceTree = "<group>"; };
 		1324FCD51AE7134E00ED490A /* AEPull.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AEPull.plist; sourceTree = "<group>"; };
 		133DC5531AE0425E007A8D01 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
 		133DC5551AE04278007A8D01 /* AEStories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStories.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				03E83D361ABCE181001B3736 /* Supporting Files */,
 				13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */,
 				133DC5571AE044D9007A8D01 /* AETestData.swift */,
+				13160BE91AE804E8004A7052 /* AEReadingListTestData.swift */,
 			);
 			path = "Æffect";
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				136F1AA41AE5D67500222350 /* UIImageView+WebCache.m in Sources */,
 				136F1A991AE5D67500222350 /* SDWebImageCompat.m in Sources */,
 				03231C9D1ADEEB5700A9231C /* AEReadingListTableViewController.swift in Sources */,
+				13160BEA1AE804E8004A7052 /* AEReadingListTestData.swift in Sources */,
 				136F1A9A1AE5D67500222350 /* SDWebImageDecoder.m in Sources */,
 				136F1AA11AE5D67500222350 /* UIImage+MultiFormat.m in Sources */,
 				136F1AA21AE5D67500222350 /* UIImage+WebP.m in Sources */,
