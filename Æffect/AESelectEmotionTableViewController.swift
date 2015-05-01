@@ -369,32 +369,30 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         })
         */
         
+        // Get and parse date from response
+        let hold: [String] = cellData.pubdate.componentsSeparatedByString("-")
+        
+        
+        let dateComponents = NSDateComponents()
+        
+        dateComponents.year = hold[0].toInt()!
+        dateComponents.month = hold[1].toInt()!
+        dateComponents.day = hold[2].toInt()!
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d MMMM y"
+        
+        var date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        
         cell.clipsToBounds = true;
         cell.headline.text = cellData.title
         
         let author = cellData.author.uppercaseString
         cell.author.text = "By \(author)"
-        cell.pubDate.text = cellData.pubdate
+        cell.pubDate.text = dateFormatter.stringFromDate(date!)
+
         
         cell.emotionColor.backgroundColor = self.currentEmotionColor
-        
-        /*
-        if (cellData.emotion == "joy") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-        } else if (cellData.emotion == "excitement") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
-        } else if (cellData.emotion == "sadness") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
-        } else if (cellData.emotion == "annoyed") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
-        } else if (cellData.emotion == "anger") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
-        } else if (cellData.emotion == "fear") {
-        cell.emotionColor.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
-        } else {
-        cell.emotionColor.backgroundColor = UIColor.blackColor()
-        }
-        */
         
         return cell
     }
