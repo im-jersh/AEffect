@@ -43,17 +43,10 @@ class AESingleStoryViewController: UIViewController {
                         self.newsImageView.image = UIImage(data: data)
                     }
             })
-        
-        
-        //println(cellData.picture_url)
-        
-
-        
     }
     
     override func viewDidLoad() {
         
-    
     }
     
 }
