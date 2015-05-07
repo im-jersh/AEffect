@@ -56,6 +56,18 @@
 		139B278F1AE6285F00707ECC /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278C1AE6285F00707ECC /* BarItem.m */; };
 		139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */; };
 		13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */; };
+		13D908531AF9A14800DF5355 /* AEStoriesHappy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908521AF9A14800DF5355 /* AEStoriesHappy.swift */; };
+		13D908551AF9A17900DF5355 /* AEStoriesSurprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908541AF9A17900DF5355 /* AEStoriesSurprise.swift */; };
+		13D908571AF9A19A00DF5355 /* AEStoriesSadness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908561AF9A19A00DF5355 /* AEStoriesSadness.swift */; };
+		13D9085A1AF9A1C600DF5355 /* AEStoriesWorried.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908591AF9A1C600DF5355 /* AEStoriesWorried.swift */; };
+		13D9085C1AF9A1DF00DF5355 /* AEStoriesFear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9085B1AF9A1DF00DF5355 /* AEStoriesFear.swift */; };
+		13D9085E1AF9A1F200DF5355 /* AEStoriesAnger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9085D1AF9A1F200DF5355 /* AEStoriesAnger.swift */; };
+		13D908611AF9A67C00DF5355 /* AEStoryHappy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908601AF9A67C00DF5355 /* AEStoryHappy.swift */; };
+		13D908631AF9A9C100DF5355 /* AEStoryFear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908621AF9A9C100DF5355 /* AEStoryFear.swift */; };
+		13D908671AF9A9ED00DF5355 /* AEStorySadness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908661AF9A9ED00DF5355 /* AEStorySadness.swift */; };
+		13D908691AF9AA0400DF5355 /* AEStorySurprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D908681AF9AA0400DF5355 /* AEStorySurprise.swift */; };
+		13D9086B1AF9AA1800DF5355 /* AEStoryWorried.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9086A1AF9AA1800DF5355 /* AEStoryWorried.swift */; };
+		13D9086D1AF9AA4200DF5355 /* AEStoryAnger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
 /* End PBXBuildFile section */
@@ -145,6 +157,18 @@
 		139B278D1AE6285F00707ECC /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
 		139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
 		13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AESingleStoryViewController.swift; sourceTree = "<group>"; };
+		13D908521AF9A14800DF5355 /* AEStoriesHappy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AEStoriesHappy.swift; path = "Æffect/AEStoriesHappy.swift"; sourceTree = "<group>"; };
+		13D908541AF9A17900DF5355 /* AEStoriesSurprise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoriesSurprise.swift; sourceTree = "<group>"; };
+		13D908561AF9A19A00DF5355 /* AEStoriesSadness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoriesSadness.swift; sourceTree = "<group>"; };
+		13D908591AF9A1C600DF5355 /* AEStoriesWorried.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoriesWorried.swift; sourceTree = "<group>"; };
+		13D9085B1AF9A1DF00DF5355 /* AEStoriesFear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoriesFear.swift; sourceTree = "<group>"; };
+		13D9085D1AF9A1F200DF5355 /* AEStoriesAnger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoriesAnger.swift; sourceTree = "<group>"; };
+		13D908601AF9A67C00DF5355 /* AEStoryHappy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryHappy.swift; sourceTree = "<group>"; };
+		13D908621AF9A9C100DF5355 /* AEStoryFear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryFear.swift; sourceTree = "<group>"; };
+		13D908661AF9A9ED00DF5355 /* AEStorySadness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStorySadness.swift; sourceTree = "<group>"; };
+		13D908681AF9AA0400DF5355 /* AEStorySurprise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStorySurprise.swift; sourceTree = "<group>"; };
+		13D9086A1AF9AA1800DF5355 /* AEStoryWorried.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryWorried.swift; sourceTree = "<group>"; };
+		13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryAnger.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				1324FCD51AE7134E00ED490A /* AEPull.plist */,
+				13D9085F1AF9A61B00DF5355 /* AEStory */,
+				13D908581AF9A1A200DF5355 /* AEStories */,
 				139B278A1AE6285F00707ECC /* CBStoreHouseRefreshControl */,
 				03E83D3C1ABCE181001B3736 /* Main.storyboard */,
 				03E83D381ABCE181001B3736 /* AppDelegate.swift */,
@@ -320,6 +346,33 @@
 				139B278E1AE6285F00707ECC /* CBStoreHouseRefreshControl.m */,
 			);
 			path = CBStoreHouseRefreshControl;
+			sourceTree = "<group>";
+		};
+		13D908581AF9A1A200DF5355 /* AEStories */ = {
+			isa = PBXGroup;
+			children = (
+				13D9085B1AF9A1DF00DF5355 /* AEStoriesFear.swift */,
+				13D908561AF9A19A00DF5355 /* AEStoriesSadness.swift */,
+				13D908541AF9A17900DF5355 /* AEStoriesSurprise.swift */,
+				13D908521AF9A14800DF5355 /* AEStoriesHappy.swift */,
+				13D908591AF9A1C600DF5355 /* AEStoriesWorried.swift */,
+				13D9085D1AF9A1F200DF5355 /* AEStoriesAnger.swift */,
+			);
+			name = AEStories;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		13D9085F1AF9A61B00DF5355 /* AEStory */ = {
+			isa = PBXGroup;
+			children = (
+				13D908601AF9A67C00DF5355 /* AEStoryHappy.swift */,
+				13D908621AF9A9C100DF5355 /* AEStoryFear.swift */,
+				13D908661AF9A9ED00DF5355 /* AEStorySadness.swift */,
+				13D908681AF9AA0400DF5355 /* AEStorySurprise.swift */,
+				13D9086A1AF9AA1800DF5355 /* AEStoryWorried.swift */,
+				13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */,
+			);
+			name = AEStory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,13 +494,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D9085A1AF9A1C600DF5355 /* AEStoriesWorried.swift in Sources */,
 				03E83D391ABCE181001B3736 /* AppDelegate.swift in Sources */,
+				13D908551AF9A17900DF5355 /* AEStoriesSurprise.swift in Sources */,
 				136F1A961AE5D67500222350 /* MKAnnotationView+WebCache.m in Sources */,
 				133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */,
 				136F1A9E1AE5D67500222350 /* SDWebImagePrefetcher.m in Sources */,
 				136F1A9D1AE5D67500222350 /* SDWebImageManager.m in Sources */,
 				133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */,
 				13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */,
+				13D9085E1AF9A1F200DF5355 /* AEStoriesAnger.swift in Sources */,
 				136F1AA41AE5D67500222350 /* UIImageView+WebCache.m in Sources */,
 				136F1A991AE5D67500222350 /* SDWebImageCompat.m in Sources */,
 				03231C9D1ADEEB5700A9231C /* AEReadingListTableViewController.swift in Sources */,
@@ -457,15 +513,24 @@
 				136F1A9C1AE5D67500222350 /* SDWebImageDownloaderOperation.m in Sources */,
 				136F1AA51AE5D67500222350 /* UIView+WebCacheOperation.m in Sources */,
 				136F1A9B1AE5D67500222350 /* SDWebImageDownloader.m in Sources */,
+				13D908671AF9A9ED00DF5355 /* AEStorySadness.swift in Sources */,
+				13D908571AF9A19A00DF5355 /* AEStoriesSadness.swift in Sources */,
 				136F1AA01AE5D67500222350 /* UIImage+GIF.m in Sources */,
 				03231C9F1ADEF46000A9231C /* AESelectEmotionTableViewController.swift in Sources */,
+				13D908691AF9AA0400DF5355 /* AEStorySurprise.swift in Sources */,
+				13D908611AF9A67C00DF5355 /* AEStoryHappy.swift in Sources */,
+				13D908531AF9A14800DF5355 /* AEStoriesHappy.swift in Sources */,
 				13ADDD241ACC8E11007B8E60 /* AESingleStoryViewController.swift in Sources */,
 				133DC5561AE04278007A8D01 /* AEStories.swift in Sources */,
 				136F1AA31AE5D67500222350 /* UIImageView+HighlightedWebCache.m in Sources */,
+				13D9086D1AF9AA4200DF5355 /* AEStoryAnger.swift in Sources */,
+				13D9085C1AF9A1DF00DF5355 /* AEStoriesFear.swift in Sources */,
 				03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */,
 				136F1A981AE5D67500222350 /* SDImageCache.m in Sources */,
 				136F1A9F1AE5D67500222350 /* UIButton+WebCache.m in Sources */,
 				136F1A971AE5D67500222350 /* NSData+ImageContentType.m in Sources */,
+				13D9086B1AF9AA1800DF5355 /* AEStoryWorried.swift in Sources */,
+				13D908631AF9A9C100DF5355 /* AEStoryFear.swift in Sources */,
 				139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */,
 				139B278F1AE6285F00707ECC /* BarItem.m in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
