@@ -306,7 +306,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     func emotionSelected(sender: UIButton) {
         
         // DEBUG
-        //println("Button tapped, tag: \(sender.tag)")
+        println("Button tapped, tag: \(sender.tag)")
         
         // adjusts tint color of navigation bar according to selected emotion
         self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
@@ -332,14 +332,32 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         //this part is trying to change the info when a emotion button clicked
         
         var temp_emotion = emotionArray[sender.tag]
-        //println(temp_emotion)
         
         //var changeString : NSSring = "stories\(temp_emotion)"
         
         urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=0"
         //println(urlString)
+       
+        if sender.tag == 0 {
+            self.stories = storieshappy
+        }
+        if sender.tag == 1 {
+            self.stories = storiessuprise
+        }
+        if sender.tag == 2 {
+            self.stories = storiessadness
+        }
+        if sender.tag == 3 {
+            self.stories = storiesworried
+        }
+        if sender.tag == 4 {
+            self.stories = storiesfear
+        }
+        if sender.tag == 5 {
+            self.stories = storiesanger
+        }
         
-        self.stories = "stories\(temp_emotion)"
+        
         self.tableView.reloadData()
         
         ///////////////////////////
