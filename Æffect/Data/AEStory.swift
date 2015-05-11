@@ -18,6 +18,7 @@ class AEStory: NSObject, NSCoding {
     var picture_url: String = "noimage.jpg"
     var caption: String = "The turtle was swimming"
     var content_without_tags: String = "Story goes here"
+    var emotion: String = ""
     
     init(title: String, author: String, pubdate:String, content_without_tags: String, picture_url: String) {
         
@@ -44,6 +45,7 @@ class AEStory: NSObject, NSCoding {
         self.picture_url = decoder.decodeObjectForKey("picture_url") as! String
         self.caption = decoder.decodeObjectForKey("caption") as! String
         self.content_without_tags = decoder.decodeObjectForKey("content_without_tags") as! String
+        self.emotion = decoder.decodeObjectForKey("emotion") as! String
     }
     
     // Never call yourself
@@ -56,6 +58,7 @@ class AEStory: NSObject, NSCoding {
         aCoder.encodeObject(picture_url, forKey: "picture_url")
         aCoder.encodeObject(caption, forKey: "caption")
         aCoder.encodeObject(content_without_tags, forKey: "content_without_tags")
+        aCoder.encodeObject(emotion, forKey: "emotion")
     }
     
 }

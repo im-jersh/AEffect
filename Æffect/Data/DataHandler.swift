@@ -76,6 +76,10 @@ class DataHandler: NSObject {
                     story.content_without_tags = content_without_tags
                 }
                 
+                if let emotion = storyDictionary.objectForKey("emotion") as? String {
+                    story.emotion = emotion
+                }
+                
                 stories.append(story)
             }
         }

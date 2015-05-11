@@ -571,6 +571,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         return [markAction,addAction]
     }
     
+    func addStoryToReadingList() -> Void {
+        println("We Bout To Add Dat Story")
+    }
+    
     
     
     /*

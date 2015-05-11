@@ -22,7 +22,18 @@ class AEReadingListTableViewController: UITableViewController {
         var emotion: String
     }
     
-    let emotionArray = ["happy", "surprised", "sadess", "worried", "fear", "anger"]
+    
+    let emotionArray = ["happy", "surprised", "sadness", "worried", "fear", "anger"]
+    
+    var loDictionary = [
+        "happy" : [AEStory](),
+        "surprised" : [AEStory](),
+        "sadness" : [AEStory](),
+        "worried" : [AEStory](),
+        "fear" : [AEStory](),
+        "anger" : [AEStory]()
+    ]
+
     
     let aeDictionary: [AEData] = [
         AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 1.0), emotion: "Happy"),
@@ -33,46 +44,50 @@ class AEReadingListTableViewController: UITableViewController {
         AEData(emoji: "😠", bgColor: UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 1.0), emotion: "Anger")
     ]
     
-//    import UIKit
-//    
-//    class EpisodesTableViewController: UITableViewController {
-//        
-//        var episodes = [Episode]()
-//        
-//        override func viewDidLoad() {
-//            super.viewDidLoad()
-//            episodes = DataHandler.getEpisodes()
-//            tableView.reloadData()
-//        }
-//        
-//        override func didReceiveMemoryWarning() {
-//            super.didReceiveMemoryWarning()
-//        }
-//        
-//        // MARK: - Table view data source
-//        
-//        override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//            return 1 // Return the number of sections
-//        }
-//        
-//        override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            return episodes.count // Return the number of rows in the section.
-//        }
-//        
-//        override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-//            let episode = episodes[indexPath.row]
-//            cell.textLabel!.text = episode.title
-//            return cell
-//        }
-//        
-//    }
+    let colorDictionary: [String: UIColor] = [
+        "happy" : UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 1.0),
+        "surprised" : UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 1.0),
+        "sadness" : UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 1.0),
+        "worried" : UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 1.0),
+        "fear" : UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 1.0),
+        "anger" : UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 1.0)
+    ]
+    
+    func countStoriesForEmotion(emo: String) -> Int {
+        return loDictionary[emo]!.count;
+    }
+    
+    func getStoriesByEmotion(emo: String) -> [AEStory] {
+        var hold = [AEStory]()
+        
+        for s in self.stories {
+            if s.emotion == emo {
+                hold.append(s)
+            }
+        }
+        
+        return hold
+    }
+    
+    func initializeAELO() -> Void {
+        
+        for emo in emotionArray {
+            loDictionary[emo] = getStoriesByEmotion(emo)
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         stories = DataHandler.getStories()
+        initializeAELO()
+        
+        for ae in aeDictionary {
+            println(ae.emotion + " has \(countStoriesForEmotion(ae.emotion.lowercaseString)) stories" )
+        }
+        
+        //tableView.reloadData()
         
         // make cell separator lines gray
         self.tableView.separatorColor = UIColor.grayColor()
@@ -97,8 +112,9 @@ class AEReadingListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // Return the number of rows in the section.
-        return 3
+        return loDictionary[emotionArray[section]]!.count
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -130,7 +146,15 @@ class AEReadingListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("readingListArticle", forIndexPath: indexPath) as! AETableViewCell
         
-        let cellData = stories[indexPath.row]
+        indexPath.section
+        
+        
+        
+//        let cellData = stories[indexPath.row]
+        
+        let emotion = emotionArray[indexPath.section]
+        
+        let cellData = loDictionary[emotion]![indexPath.row]
         
         
         var imgURL: NSURL = NSURL(string: cellData.picture_url)!
@@ -147,14 +171,14 @@ class AEReadingListTableViewController: UITableViewController {
         // Configure the cell...
         let img = UIImage(named: cellData.picture_url)
         cell.clipsToBounds = true;
-        //cell.featuredImage.image = img
         cell.headline.text = cellData.title
+        
         
         let author = cellData.author.uppercaseString
         cell.author.text = "By \(author)"
         cell.pubDate.text = cellData.pubdate
         
-        cell.emotionColor.backgroundColor = aeDictionary[0].bgColor
+        cell.emotionColor.backgroundColor = colorDictionary[emotion]
         
         // store weak reference to tableView in cell object
         cell.tableView = self.tableView
@@ -193,8 +217,11 @@ class AEReadingListTableViewController: UITableViewController {
         if segue.identifier == "showArticleDetail" {
             if let destination = segue.destinationViewController as? AESingleStoryViewController {
                 if let newsIndex = tableView.indexPathForSelectedRow()?.row {
+                    println("Selected Row is \(newsIndex)")
+                    //var newsH = stories[newsIndex];
+                    let section = tableView.indexPathForSelectedRow()?.section
                     
-                    var newsH = stories[newsIndex];
+                    var newsH = loDictionary[emotionArray[section!]]![newsIndex]
                     
                     destination.newsTitle = newsH.title
                     destination.newsImage = newsH.picture_url
