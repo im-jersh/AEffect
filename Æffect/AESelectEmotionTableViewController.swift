@@ -38,23 +38,74 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     var page = 0
     ////////////////////////////////////////////////////////////////////////////////////////
     /*Get news data from server*/
-    
     var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
-    //var urlString = "http://babbage.cs.missouri.edu/~hcfxd/testjson/testjson.json"
+
+    var urlStringHappy = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
+    var urlStringFear = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=fear&offset=10"
+    var urlStringSadness = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=sadness&offset=10"
+    var urlStringSuprise = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=surprise&offset=10"
+    var urlStringWorried = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=worried&offset=10"
+    var urlStringAnger = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
+
     var stories: AEStories = AEStories()
+    var storieshappy: AEStories = AEStories()
+    var storiesfear: AEStories = AEStories()
+    var storiessadness: AEStories = AEStories()
+    var storiessuprise: AEStories = AEStories()
+    var storiesworried: AEStories = AEStories()
+    var storiesanger: AEStories = AEStories()
+
+    
+
     var selectedStory: AEStory?
     
     ////////////////////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        storiesfear.load(urlStringFear) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            }
+        }
         
-        stories.load(urlString) {
+        storiesworried.load(urlStringWorried) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            }
+        }
+        
+        storiesanger.load(urlStringAnger) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            }
+        }
+        
+        storiessadness.load(urlStringSadness) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            }
+        }
+        
+        storiessuprise.load(urlStringSuprise) {
+            (news, errorString) -> Void in
+            if let unwrappedErrorString = errorString {
+                println(unwrappedErrorString)
+            }
+        }
+        
+        storieshappy.load(urlStringHappy) {
             (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
                 println(unwrappedErrorString)
             } else {
+                self.stories = self.storieshappy
                 self.tableView.reloadData()
             }
         }
@@ -255,7 +306,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     func emotionSelected(sender: UIButton) {
         
         // DEBUG
-        //println("Button tapped, tag: \(sender.tag)")
+        println("Button tapped, tag: \(sender.tag)")
         
         // adjusts tint color of navigation bar according to selected emotion
         self.navigationController?.navigationBar.barTintColor = sender.backgroundColor
@@ -281,24 +332,35 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         //this part is trying to change the info when a emotion button clicked
         
         var temp_emotion = emotionArray[sender.tag]
-        //println(temp_emotion)
+        
+        //var changeString : NSSring = "stories\(temp_emotion)"
         
         urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=\(temp_emotion)&offset=0"
         //println(urlString)
-        
-        stories.load(urlString) {
-            (news, errorString) -> Void in
-            if let unwrappedErrorString = errorString {
-                println(unwrappedErrorString)
-            } else {
-                self.tableView.reloadData()
-            }
+       
+        if sender.tag == 0 {
+            self.stories = storieshappy
+        }
+        if sender.tag == 1 {
+            self.stories = storiessuprise
+        }
+        if sender.tag == 2 {
+            self.stories = storiessadness
+        }
+        if sender.tag == 3 {
+            self.stories = storiesworried
+        }
+        if sender.tag == 4 {
+            self.stories = storiesfear
+        }
+        if sender.tag == 5 {
+            self.stories = storiesanger
         }
         
+        
+        self.tableView.reloadData()
+        
         ///////////////////////////
-        
-        
-        
     }
     
     // MARK: - Table view data source
@@ -474,6 +536,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     }
     }
     */
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         /*if editingStyle == .Delete {
         // Delete the row from the data source
@@ -484,68 +547,28 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         }*/
     }
     
-    
     //table view swipe from the right to left option
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
-        // 1
-        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-            // 2
-            let shareMenu = UIAlertController(title: nil, message: "Share", preferredStyle: .ActionSheet)
-            
-            let whatever = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-            
-            shareMenu.addAction(whatever)
-            shareMenu.addAction(cancelAction)
-            
-            
-            self.presentViewController(shareMenu, animated: true, completion: nil)
+
+        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark as \u{000A}R/UR" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
         })
+        markAction.backgroundColor = UIColor.grayColor()
         
-        shareAction.backgroundColor = UIColor.grayColor()
-        
-        // 3
         var addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add    \u{000A}List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-            // 4
             let addMenu = UIAlertController(title: nil, message: "Add to reading list", preferredStyle: .ActionSheet)
             
-            let appRateAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let appAddAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
-            addMenu.addAction(appRateAction)
+            addMenu.addAction(appAddAction)
             addMenu.addAction(cancelAction)
             
             
             self.presentViewController(addMenu, animated: true, completion: nil)
         })
-        // 5
         addAction.backgroundColor = UIColor.lightGrayColor()
         
-        /*
-        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark As  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
-        
-        })
-        
-        markAction.backgroundColor = UIColor.darkGrayColor()
-        */
-        
-        
-        
-        /********************************************/
-        //test delete option.
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete  " , handler: { (action, indexPath:NSIndexPath!) -> Void in
-            
-            self.stories.story.removeAtIndex(indexPath.row)
-            //self.testData.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            
-            
-        })
-        
-        deleteAction.backgroundColor = UIColor.darkGrayColor()
-        
-        return [shareAction,addAction, deleteAction]
-        //return [shareAction,addAction, deleteAction,markAction]
+        return [markAction,addAction]
     }
     
     
@@ -553,7 +576,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
+
     }
     */
     
