@@ -405,7 +405,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("article", forIndexPath: indexPath) as! AETableViewCell
         
-        let cellData = stories.story[indexPath.row]
+        if let cellData = stories.story[indexPath.row] as AEStory? {
         
         
         // Configure the cell...
@@ -414,7 +414,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         var picURL = ""
         var tempURL = ""
-        println(cellData.picture_url)
+        //println(cellData.picture_url)
         
         if  cellData.picture_url != "null" {
             var pictureURL = cellData.picture_url
@@ -422,7 +422,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             
             var tail_range = Range(start: advance(pictureURL.startIndex, length), end: pictureURL.endIndex)
             var tail_string = pictureURL.substringWithRange(tail_range)
-            println (tail_string)
+            //println (tail_string)
             
             if tail_string != "ticleLarge.jpg" {
                 var range = Range(start: pictureURL.startIndex, end: advance(pictureURL.startIndex, length))
@@ -438,7 +438,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         else {
             picURL = cellData.picture_url
         }
-        println(picURL)
+        //println(picURL)
         cell.featuredImage.sd_setImageWithURL(NSURL(string: picURL as String)!, placeholderImage: UIImage(named: "noimage.jpg"))
         
         
@@ -479,7 +479,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
 
         
         cell.emotionColor.backgroundColor = self.currentEmotionColor
-        
+        }
         return cell
     }
     
