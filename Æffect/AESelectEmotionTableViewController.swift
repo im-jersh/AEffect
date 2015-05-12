@@ -35,17 +35,25 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     var upBubbleMenu : DWBubbleMenuButton?
     
     var pull_action : CBStoreHouseRefreshControl?
+
     var page = 0
+    var pagehappy = 0
+    var pagefear = 0
+    var pagesadness = 0
+    var pagesurprise = 0
+    var pageworried = 0
+    var pageanger = 0
+
     ////////////////////////////////////////////////////////////////////////////////////////
     /*Get news data from server*/
-    var urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
+    var urlString = ""
 
-    var urlStringHappy = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=joy&offset=10"
-    var urlStringFear = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=fear&offset=10"
-    var urlStringSadness = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=sadness&offset=10"
-    var urlStringSuprise = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=surprise&offset=10"
-    var urlStringWorried = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=worried&offset=10"
-    var urlStringAnger = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=10"
+    var urlStringHappy = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=happy&offset=0"
+    var urlStringFear = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=fear&offset=0"
+    var urlStringSadness = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=sadness&offset=0"
+    var urlStringSuprise = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=surprise&offset=0"
+    var urlStringWorried = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=worried&offset=0"
+    var urlStringAnger = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset=0"
 
     var stories: AEStories = AEStories()
     var storieshappy: AEStories = AEStories()
@@ -154,13 +162,11 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     }
     
     func refreshTriggered(sender: AnyObject){
-        page++
-        var timer = NSTimer(timeInterval: 10.0, target: self, selector: Selector("finishRefreshControl:"), userInfo: nil , repeats: false)
-        timer.fire()
+        finishRefreshControl()
         
     }
     
-    func finishRefreshControl (timer: NSTimer)
+    func finishRefreshControl ()
     {
         let delay = 2 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
@@ -168,31 +174,49 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             self.pull_action?.finishingLoading()
         }
         if (currentEmotionColor == UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)){
+            pagehappy++
+            var offset = pagehappy * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=happy&offset="
-            
+            urlString = urlString + String(offset)
         }
         else if (currentEmotionColor == UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)){
+            pagesurprise++
+            var offset = pagesurprise * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=surprise&offset="
-            
+            urlString = urlString + String(offset)
+
         }
         else if (currentEmotionColor == UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)){
+            pagesadness++
+            var offset = pagesadness * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=sadness&offset="
-            
+            urlString = urlString + String(offset)
+
         }
         else if (currentEmotionColor == UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)){
+            pageworried++
+            var offset = pageworried * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=worried&offset="
-            
+            urlString = urlString + String(offset)
+
         }
         else if (currentEmotionColor == UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)){
+            pagefear++
+            var offset = pagefear * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=anger&offset="
-            
+            urlString = urlString + String(offset)
+
         }
         else if (currentEmotionColor == UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)){
+            pageanger++
+            var offset = pageanger * 10
             urlString = "https://peaceful-cove-8511.herokuapp.com/db/?emotion=fear&offset="
-            
+            urlString = urlString + String(offset)
+
         }
-        var offset = page * 10
-        urlString = urlString + String(offset)
+        
+        println(urlString)
+        
         stories.load(urlString) {
             (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
