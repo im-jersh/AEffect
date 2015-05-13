@@ -14,7 +14,7 @@ class AEReadingListTableViewController: UITableViewController {
     // strong reference in order to allow for appear/disappear when entering/exiting edit mode
     @IBOutlet var doneButton: UIBarButtonItem!
     
-    var stories = [AEStory]()
+    var stories : [AEStory] = [AEStory]()
     
     struct AEData {
         var emoji: String
@@ -80,8 +80,24 @@ class AEReadingListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stories = DataHandler.getStories()
-        initializeAELO()
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentDir = directoryPaths[0] as! String
+        let storyFilePath = documentDir.stringByAppendingPathComponent("AEReadingList.archive")
+        
+        //var hold : [AEStory]?
+        
+        if fileManager.fileExistsAtPath(storyFilePath) {
+            stories = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]!
+        } else {
+            stories = [AEStory]()
+        }
+//        
+//        stories = GammaHandler.getStories()
+        
+        if !stories.isEmpty {
+            initializeAELO()
+        }
         
         for ae in aeDictionary {
             println(ae.emotion + " has \(countStoriesForEmotion(ae.emotion.lowercaseString)) stories" )
@@ -285,6 +301,13 @@ class AEReadingListTableViewController: UITableViewController {
         }*/
     }
     
+//    // swipe options method
+//    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+//        
+//        var deleteAction = UIAlertAction( title: "Remove", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in self.removeStoryFromReadingList(indexPath.row)})
+//        tableView.reloadData()
+//        
+//    }
     
     // swipe options method
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
@@ -293,11 +316,9 @@ class AEReadingListTableViewController: UITableViewController {
             // 2
             let deleteMenu = UIAlertController(title: nil, message: "Remove From current List", preferredStyle: .ActionSheet)
             
-            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
-                // remove article from data source
-                self.stories.removeAtIndex(indexPath.row)
+            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in self.removeStoryFromReadingList(indexPath.row)
                 // remove row from table
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
@@ -313,4 +334,15 @@ class AEReadingListTableViewController: UITableViewController {
         return [deleteAction]
     }
     
+    func removeStoryFromReadingList(row: Int) -> Void {
+        if let newsIndex = tableView.indexPathForSelectedRow()?.row {
+            println("Selected Row is \(newsIndex)")
+            //var newsH = stories[newsIndex];
+            let section = tableView.indexPathForSelectedRow()?.section
+            
+            var newsH = loDictionary[emotionArray[section!]]![newsIndex]
+            GammaHandler.removeStory(newsH.title)
+            //self.tableView.deleteRowsAtIndexPaths(<#indexPaths: [AnyObject]#>, withRowAnimation: .Fade)
+        }
+    }
 }

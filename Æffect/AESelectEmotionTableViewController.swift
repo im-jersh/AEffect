@@ -54,10 +54,8 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     var storiessuprise: AEStories = AEStories()
     var storiesworried: AEStories = AEStories()
     var storiesanger: AEStories = AEStories()
-
     
-
-    var selectedStory: AEStory?
+    
     
     ////////////////////////////////////////////////////////////////////////////////////////
     
@@ -532,7 +530,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         var addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add    \u{000A}List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             let addMenu = UIAlertController(title: nil, message: "Add to reading list", preferredStyle: .ActionSheet)
             
-            let appAddAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
+            let appAddAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in self.addStoryToReadingList(indexPath.row)})
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
             addMenu.addAction(appAddAction)
@@ -544,6 +542,15 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         addAction.backgroundColor = UIColor.lightGrayColor()
         
         return [markAction,addAction]
+    }
+    
+    func addStoryToReadingList(row: Int) -> Void {
+        var hold = stories.story[row]
+        if let emotion = self.title?.lowercaseString {
+            hold.emotion = emotion
+        }
+        
+        GammaHandler.addStory(hold)
     }
     
 }

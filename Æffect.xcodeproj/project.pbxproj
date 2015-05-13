@@ -71,7 +71,8 @@
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
 		9D0606541AFEA8C300AD82D4 /* AEReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D0606531AFEA8C300AD82D4 /* AEReadingList.json */; };
 		9D8C20A21AFFEFB3009D9B30 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */; };
-		9D8C20A31AFFEFB3009D9B30 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C20A11AFFEFB3009D9B30 /* DataHandler.swift */; };
+		9D8DDDB21B02E52600D879E7 /* AEReadingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */; };
+		9DCBC48A1B030AFB00D61A4D /* GammaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,7 +175,8 @@
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
 		9D0606531AFEA8C300AD82D4 /* AEReadingList.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; name = AEReadingList.json; path = "/Users/lmwv2c/Desktop/reading-list-archive/Æffect/AEReadingList.json"; sourceTree = "<absolute>"; };
 		9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
-		9D8C20A11AFFEFB3009D9B30 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AEReadingList.xcdatamodel; sourceTree = "<group>"; };
+		9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GammaHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				03E83D361ABCE181001B3736 /* Supporting Files */,
 				13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */,
 				133DC5571AE044D9007A8D01 /* AETestData.swift */,
+				9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */,
 			);
 			path = "Æffect";
 			sourceTree = "<group>";
@@ -392,7 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */,
-				9D8C20A11AFFEFB3009D9B30 /* DataHandler.swift */,
+				9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -539,7 +542,6 @@
 				13D908571AF9A19A00DF5355 /* AEStoriesSadness.swift in Sources */,
 				136F1AA01AE5D67500222350 /* UIImage+GIF.m in Sources */,
 				03231C9F1ADEF46000A9231C /* AESelectEmotionTableViewController.swift in Sources */,
-				9D8C20A31AFFEFB3009D9B30 /* DataHandler.swift in Sources */,
 				13D908691AF9AA0400DF5355 /* AEStorySurprise.swift in Sources */,
 				13D908611AF9A67C00DF5355 /* AEStoryHappy.swift in Sources */,
 				13D908531AF9A14800DF5355 /* AEStoriesHappy.swift in Sources */,
@@ -554,8 +556,10 @@
 				136F1A971AE5D67500222350 /* NSData+ImageContentType.m in Sources */,
 				13D9086B1AF9AA1800DF5355 /* AEStoryWorried.swift in Sources */,
 				13D908631AF9A9C100DF5355 /* AEStoryFear.swift in Sources */,
+				9D8DDDB21B02E52600D879E7 /* AEReadingList.xcdatamodeld in Sources */,
 				9D8C20A21AFFEFB3009D9B30 /* AEStory.swift in Sources */,
 				139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */,
+				9DCBC48A1B030AFB00D61A4D /* GammaHandler.swift in Sources */,
 				139B278F1AE6285F00707ECC /* BarItem.m in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
 				03A1AE151AE61A4C0094BB56 /* AESettingsViewController.swift in Sources */,
@@ -778,6 +782,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */,
+			);
+			currentVersion = 9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */;
+			path = AEReadingList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 03E83D2B1ABCE180001B3736 /* Project object */;
 }
