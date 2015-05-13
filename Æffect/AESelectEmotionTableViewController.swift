@@ -216,6 +216,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         }
         
         println(urlString)
+        //self.tableView.reloadData()
         
         stories.load(urlString) {
             (news, errorString) -> Void in
