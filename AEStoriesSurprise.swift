@@ -62,7 +62,7 @@ class AEStoriesSurprise: NSObject {
                                 let content_without_tags = specificStory["content_without_tags"] as? NSString
                                 let pubdate = specificStory["pubdate"] as? NSString
                                 let picture_url = specificStory["picture_url"] as? NSString
-                                let newStory = AEStory(title: title! as String, author: author! as String, pubdate: pubdate! as String, content_without_tags: content_without_tags! as String, picture_url: picture_url! as String);
+                                let newStory = AEStory(title: title! as String, author: author! as String, pubdate: pubdate! as String, content_without_tags: content_without_tags! as String, picture_url: picture_url! as String, article_url: storyURL! as String);
                                 storySurprise.append(newStory)
                                 
                             }

@@ -21,13 +21,14 @@ class AEStory: NSObject, NSCoding {
     var emotion: String = ""
     var alreadyRead: Bool = false
     
-    init(title: String, author: String, pubdate:String, content_without_tags: String, picture_url: String) {
+    init(title: String, author: String, pubdate:String, content_without_tags: String, picture_url: String, article_url: String) {
         
         self.title = title
         self.author = author
         self.pubdate = pubdate
         self.picture_url = picture_url
         self.content_without_tags = content_without_tags
+        self.article_url = article_url
     }
     
     override init() {
