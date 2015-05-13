@@ -27,9 +27,24 @@ class AESingleStoryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        
+        let hold:[String] = newsDate.componentsSeparatedByString("-")
+        let dateComponents = NSDateComponents()
+        
+        dateComponents.year = hold[0].toInt()!
+        dateComponents.month = hold[1].toInt()!
+        dateComponents.day = hold[2].toInt()!
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d MMMM y"
+        
+        var date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        
+        
         titleLabel.text = newsTitle
         authorLabel.text = "By: \(newsAuthor)"
-        dateLabel.text = "Last Update: \(newsDate)"
+        dateLabel.text = dateFormatter.stringFromDate(date!)
+
         newsText.text = newsStory
         //newsImageView.image = UIImage(named: newsImage)
         
