@@ -30,10 +30,11 @@ class AESettingsViewController: UITableViewController {
     
     @IBOutlet weak var defaultEmotionButton: UIButton!
     
+    @IBOutlet weak var nightMode: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nightMode.on = NSUserDefaults.standardUserDefaults().boolForKey("nightMode")
         // set popover content size
         let bounds = UIScreen.mainScreen().bounds
         var width : CGFloat = 0
@@ -51,6 +52,13 @@ class AESettingsViewController: UITableViewController {
         
     }
     
+    @IBAction func changeNightMode(sender: AnyObject) {
+        nightMode.on = (sender as! UISwitch).on
+        //println("check in settings" + "\(nightMode.on)")
+        NSUserDefaults.standardUserDefaults().setBool(nightMode.on, forKey: "nightMode")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+    }
     override func viewWillAppear(animated: Bool) {
         
         let defaults = NSUserDefaults.standardUserDefaults()

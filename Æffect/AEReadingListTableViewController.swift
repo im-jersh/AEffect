@@ -109,8 +109,24 @@ class AEReadingListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("readingListArticle", forIndexPath: indexPath) as! AETableViewCell
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
         let cellData = testData[indexPath.row]
+        if let check = defaults.boolForKey("nightMode") as Bool?{
+            println("Check on load" + "\(check)")
+            if(check==true){
+                cell.backgroundColor = UIColor(red: 0.147, green: 0.147, blue: 0.147, alpha: 0.8)
+                cell.headline.textColor = UIColor.whiteColor()
+                cell.author.textColor = UIColor.whiteColor()
+                cell.pubDate.textColor = UIColor.whiteColor()
+            }
+            else{
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                cell.headline.textColor = UIColor.blackColor()
+                cell.author.textColor = UIColor.blackColor()
+                cell.pubDate.textColor = UIColor.blackColor()
+            }
+        }
+        
         
         
         // Configure the cell...
