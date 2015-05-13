@@ -17,6 +17,8 @@ class AESingleStoryViewController: UIViewController {
     var newsDate = ""
     var newsAuthor = ""
     var newsURL = ""
+    var emotion = ""
+    var article = AEStory(title: "", author: "", pubdate: "", content_without_tags: "", picture_url: "", article_url: "")
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var newsImageView: UIImageView!
@@ -105,7 +107,24 @@ class AESingleStoryViewController: UIViewController {
         })
         }
     func addArticleToReadingList(){
-        println("Hello")
+            
+            let addMenu = UIAlertController(title: nil, message: "Add to reading list", preferredStyle: .ActionSheet)
+            
+            let appAddAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in self.addStoryToReadingList()})
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            addMenu.addAction(appAddAction)
+            addMenu.addAction(cancelAction)
+            
+            
+            self.presentViewController(addMenu, animated: true, completion: nil)
+    }
+    func addStoryToReadingList() -> Void {
+        var hold = article
+        if let emotion = self.navigationItem.title?.lowercaseString{
+            hold.emotion = self.navigationItem.title!.lowercaseString
+        }
+        GammaHandler.addStory(hold)
     }
     override func viewDidLoad() {
         
