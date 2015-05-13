@@ -42,27 +42,41 @@ class GammaHandler: NSObject {
             
             var stories = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]
             
-            var i = 0
+            var index = getIndexByHeadline(stories, headline: headline)
             
-            println("Before Removal")
-            
-            for s in stories {
-                println("stories[\(i++)]: \(s.title)")
+            if index != -1 {
+                println("Removal: \"\(stories[index].title)\"")
+                stories.removeAtIndex(index)
+                stories.removeAll(keepCapacity: false)
+                NSKeyedArchiver.archivedDataWithRootObject(stories)
+                printStories()
+            } else {
+                println("Error: \"\(headline)\" couldn't be removed")
             }
-            
+        }
+    }
+    
+    class func printStories() -> Void {
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentDir = directoryPaths[0] as! String
+        let storyFilePath = documentDir.stringByAppendingPathComponent("AEReadingList.archive")
+        let stories = NSKeyedUnarchiver.unarchiveObjectWithFile( storyFilePath) as! [AEStory]
+        var i = 0
+        for s in stories {
+            println("Story[\(i)]: \(s.title)")
+        }
+    }
+    
+    class func getIndexByHeadline(stories : [AEStory], headline : String) -> Int {
+        if !stories.isEmpty {
             for (var i = 0; i < stories.count; ++i) {
-                if stories[i].title == headline {
-                    stories.removeAtIndex(i)
-                    return
+                if stories[i].title.isEqual(headline) {
+                    return i
                 }
             }
-            println("After Removal:")
-            for s in stories {
-                println("stories[\(i++)]: \(s.title)")
-            }
-            NSKeyedArchiver.archivedDataWithRootObject(stories)
         }
-        
+        return -1
     }
     
     class func addStory(story: AEStory) -> Void {
@@ -86,21 +100,6 @@ class GammaHandler: NSObject {
         }
         
         NSKeyedArchiver.archiveRootObject(stories!, toFile: storyFilePath)
-        let hold = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]
-        
-        for s in hold {
-            println("")
-            println("\(s.title) is archived with emotion: \(s.emotion)")
-            println("")
-        }
-        let temp = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]
-        
-        for s in temp {
-            println("")
-            println("Still Here: \(s.title) is Still here \(s.emotion)")
-            println("")
-        }
-
     }
     
     class func isPresent(story: AEStory, stories: [AEStory]) -> Bool {
