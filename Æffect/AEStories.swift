@@ -50,7 +50,7 @@ class AEStories: NSObject {
                             println("no articles")
                         }
                         else{
-                            println("abcde")
+                            //println("abcde")
                             for specificStory in docs{
                                 //println(specificStory["anger"])
                                 
