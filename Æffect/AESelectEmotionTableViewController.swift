@@ -248,6 +248,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.view.addSubview(upBubbleMenu!)
+        self.tableView.reloadData()
     }
     
     @IBAction func unwindToMainFeed(segue: UIStoryboardSegue) {
@@ -504,8 +505,12 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         cell.author.text = "By \(author)"
         cell.pubDate.text = dateFormatter.stringFromDate(date!)
 
-        
-        cell.emotionColor.backgroundColor = self.currentEmotionColor
+            if cellData.alreadyRead == false {
+                cell.emotionColor.backgroundColor = self.currentEmotionColor
+            }
+            else {
+                cell.emotionColor.backgroundColor = UIColor.grayColor()
+            }
         }
         return cell
     }
@@ -527,7 +532,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     //println(newsIndex)
                     //destination.headLine = testData[newsIndex].headline
                     var newsH = stories.story[newsIndex];
-                    
+                    stories.story[newsIndex].alreadyRead = true
                     destination.newsTitle = newsH.title
                     destination.newsImage = newsH.picture_url
                     destination.newsStory = newsH.content_without_tags
@@ -601,11 +606,24 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     //table view swipe from the right to left option
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
 
-        var markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark as \u{000A}R/UR" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-        })
+        
+        var markAction : UITableViewRowAction
+        if stories.story[indexPath.row].alreadyRead == false {
+            markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark as \u{000A}Read" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+                    self.stories.story[indexPath.row].alreadyRead = true
+                    self.tableView.reloadData()
+            })
+        }
+        else {
+            markAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Mark as \u{000A}Unread" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+                    self.stories.story[indexPath.row].alreadyRead = false
+                    self.tableView.reloadData()
+            })
+        }
         markAction.backgroundColor = UIColor.grayColor()
         
         var addAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Add    \u{000A}List" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
             let addMenu = UIAlertController(title: nil, message: "Add to reading list", preferredStyle: .ActionSheet)
             
             let appAddAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
