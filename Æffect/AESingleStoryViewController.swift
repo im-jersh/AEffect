@@ -44,8 +44,14 @@ class AESingleStoryViewController: UIViewController {
         titleLabel.text = newsTitle
         authorLabel.text = "By: \(newsAuthor)"
         dateLabel.text = dateFormatter.stringFromDate(date!)
-
-        newsText.text = newsStory
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: newsStory, attributes: [NSKernAttributeName : 1, NSFontAttributeName:UIFont(name: "HelveticaNeue-Light", size: 18.0)!])
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        
+        myMutableString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, count(newsStory)))
+        newsText.attributedText = myMutableString
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if let check = defaults.boolForKey("nightMode") as Bool?{
             if check==true{

@@ -14,7 +14,7 @@ class AEStories: NSObject {
     
     func load(fromURLString: String, completionHandler: (AEStories, String?) -> Void) {
         
-        story =  [AEStory]()
+        story = [AEStory]()
         if let url = NSURL(string: fromURLString) {
             let urlRequest = NSMutableURLRequest(URL: url)
             let session = NSURLSession.sharedSession()
