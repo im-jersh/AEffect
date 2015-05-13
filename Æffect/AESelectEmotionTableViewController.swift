@@ -15,12 +15,12 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         var bgColor: UIColor
     }
     let emojiArray = ["😄", "😳", "😢", "😒", "😖", "😠"]
-    let emotionArray = ["happy", "surprise", "sadness", "worried", "fear", "anger"]
+    let emotionArray = ["happy", "surprised", "sadness", "worried", "fear", "anger"]
     
     let aedictionary: [String: AEData] = [
         
         "happy": AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)),
-        "surprise": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
+        "surprised": AEData(emoji: "😳", bgColor: UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)),
         "sadness": AEData(emoji: "😢", bgColor: UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)),
         "worried": AEData(emoji: "😒", bgColor: UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)),
         "fear": AEData(emoji: "😖", bgColor: UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)),

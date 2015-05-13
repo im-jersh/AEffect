@@ -33,7 +33,7 @@ class AEReadingListTableViewController: UITableViewController {
         "fear" : [AEStory](),
         "anger" : [AEStory]()
     ]
-
+    
     
     let aeDictionary: [AEData] = [
         AEData(emoji: "😄", bgColor: UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 1.0), emotion: "Happy"),
@@ -92,15 +92,11 @@ class AEReadingListTableViewController: UITableViewController {
         } else {
             stories = [AEStory]()
         }
-//        
-//        stories = GammaHandler.getStories()
+        //
+        //        stories = GammaHandler.getStories()
         
         if !stories.isEmpty {
             initializeAELO()
-        }
-        
-        for ae in aeDictionary {
-            println(ae.emotion + " has \(countStoriesForEmotion(ae.emotion.lowercaseString)) stories" )
         }
         
         //tableView.reloadData()
@@ -166,7 +162,7 @@ class AEReadingListTableViewController: UITableViewController {
         let cellData = loDictionary[emotion]![indexPath.row]
         if let check = defaults.boolForKey("nightMode") as Bool?{
             println("Check on load" + "\(check)")
-            if(check==true){
+            if(check == true){
                 cell.backgroundColor = UIColor(red: 0.147, green: 0.147, blue: 0.147, alpha: 0.8)
                 cell.headline.textColor = UIColor.whiteColor()
                 cell.author.textColor = UIColor.whiteColor()
@@ -179,7 +175,7 @@ class AEReadingListTableViewController: UITableViewController {
                 cell.pubDate.textColor = UIColor.blackColor()
             }
         }
-
+        
         
         
         var imgURL: NSURL = NSURL(string: cellData.picture_url)!
@@ -191,7 +187,7 @@ class AEReadingListTableViewController: UITableViewController {
                     cell.featuredImage.image = UIImage(data: data)
                 }
         })
-
+        
         
         // Configure the cell...
         let img = UIImage(named: cellData.picture_url)
@@ -200,24 +196,24 @@ class AEReadingListTableViewController: UITableViewController {
         
         
         let author = cellData.author.uppercaseString
-        //cell.author.text = "By \(author)"
+        cell.author.text = "By \(author)"
         
         
-//        let hold: [String] = cellData["date"]!.componentsSeparatedByString("-")
-//        
-//        let dateComponents = NSDateComponents()
-//        
-//        dateComponents.year = hold[0].toInt()!
-//        dateComponents.month = hold[1].toInt()!
-//        dateComponents.day = hold[2].toInt()!
-//        
-//        var dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "d MMMM y"
-//        
-//        var date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
-//        
-//        cell.pubDate.text = dateFormatter.stringFromDate(date!)
-//        
+        //        let hold: [String] = cellData["date"]!.componentsSeparatedByString("-")
+        //
+        //        let dateComponents = NSDateComponents()
+        //
+        //        dateComponents.year = hold[0].toInt()!
+        //        dateComponents.month = hold[1].toInt()!
+        //        dateComponents.day = hold[2].toInt()!
+        //
+        //        var dateFormatter = NSDateFormatter()
+        //        dateFormatter.dateFormat = "d MMMM y"
+        //
+        //        var date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        //
+        //        cell.pubDate.text = dateFormatter.stringFromDate(date!)
+        //
         
         cell.pubDate.text = cellData.pubdate
         
@@ -271,6 +267,7 @@ class AEReadingListTableViewController: UITableViewController {
                     destination.newsStory = newsH.content_without_tags
                     destination.newsDate = newsH.pubdate
                     destination.newsAuthor = newsH.author
+                    destination.title = newsH.emotion.capitalizedString
                 }
             }
         }
@@ -318,35 +315,32 @@ class AEReadingListTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            testData.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }*/
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+           // numbers.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        
     }
-    
-//    // swipe options method
-//    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
-//        
-//        var deleteAction = UIAlertAction( title: "Remove", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in self.removeStoryFromReadingList(indexPath.row)})
-//        tableView.reloadData()
-//        
-//    }
     
     // swipe options method
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
         
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+//        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action, indexPath) -> Void in
+//            self.removeStoryFromReadingList(indexPath.row, section: indexPath.section)
+//            tableView.editing = false
+//            println("deleteAction")
+//        }
+        
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
+            
             // 2
             let deleteMenu = UIAlertController(title: nil, message: "Remove From current List", preferredStyle: .ActionSheet)
-            
-            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in self.removeStoryFromReadingList(indexPath.row)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            let twitterAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in self.removeStoryFromReadingList(indexPath.row, section: indexPath.section, idxPath: [indexPath])
                 // remove row from table
-                //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             })
+            
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
             
             deleteMenu.addAction(twitterAction)
@@ -361,15 +355,40 @@ class AEReadingListTableViewController: UITableViewController {
         return [deleteAction]
     }
     
-    func removeStoryFromReadingList(row: Int) -> Void {
-        if let newsIndex = tableView.indexPathForSelectedRow()?.row {
-            println("Selected Row is \(newsIndex)")
-            //var newsH = stories[newsIndex];
-            let section = tableView.indexPathForSelectedRow()?.section
-            
-            var newsH = loDictionary[emotionArray[section!]]![newsIndex]
-            GammaHandler.removeStory(newsH.title)
-            //self.tableView.deleteRowsAtIndexPaths(<#indexPaths: [AnyObject]#>, withRowAnimation: .Fade)
+    func removeStoryFromReadingList(row: Int, section: Int, idxPath: [NSIndexPath]) -> Void {
+        
+        var newsH = loDictionary[emotionArray[section]]![row]
+        
+        GammaHandler.removeStory(newsH.title)
+        
+        self.loDictionary[emotionArray[section]]!.removeAtIndex(row)
+        tableView.deleteRowsAtIndexPaths(idxPath, withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.reloadData()
+        
+        
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentDir = directoryPaths[0] as! String
+        let storyFilePath = documentDir.stringByAppendingPathComponent("AEReadingList.archive")
+        
+        //var hold : [AEStory]?
+        
+        if fileManager.fileExistsAtPath(storyFilePath) {
+            stories = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]!
+        }
+        
+        printStories()
+        
+        //stories = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]!
+        initializeAELO()
+        
+    }
+    
+    func printStories() -> Void {
+        var i = 0
+        for s in stories {
+            println("Story[\(i)]: \(s.title)")
         }
     }
+    
 }
