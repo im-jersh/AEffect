@@ -42,13 +42,27 @@ class GammaHandler: NSObject {
             
             var stories = NSKeyedUnarchiver.unarchiveObjectWithFile(storyFilePath) as! [AEStory]
             
+            var i = 0
+            
+            println("Before Removal")
+            
+            for s in stories {
+                println("stories[\(i++)]: \(s.title)")
+            }
+            
             for (var i = 0; i < stories.count; ++i) {
                 if stories[i].title == headline {
                     stories.removeAtIndex(i)
                     return
                 }
             }
+            println("After Removal:")
+            for s in stories {
+                println("stories[\(i++)]: \(s.title)")
+            }
+            NSKeyedArchiver.archivedDataWithRootObject(stories)
         }
+        
     }
     
     class func addStory(story: AEStory) -> Void {
