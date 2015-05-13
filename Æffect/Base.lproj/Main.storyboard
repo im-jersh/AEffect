@@ -245,8 +245,21 @@
                                                 <color key="textColor" red="0.27575152850000001" green="0.27575152850000001" blue="0.27575152850000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-gC-0aZ">
+                                                <rect key="frame" x="16" y="530" width="568" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Article Content">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hD5-NK-qrf">
-                                                <rect key="frame" x="0.0" y="101" width="600" height="413"/>
+                                                <rect key="frame" x="0.0" y="103" width="600" height="413"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="176" id="Y8v-QR-fjv"/>
                                                     <constraint firstAttribute="width" secondItem="hD5-NK-qrf" secondAttribute="height" multiplier="164:113" id="oCD-mI-neU"/>
@@ -257,12 +270,6 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Article Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-gC-0aZ">
-                                                <rect key="frame" x="16" y="530" width="568" height="21"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
