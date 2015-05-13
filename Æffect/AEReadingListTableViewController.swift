@@ -137,7 +137,23 @@ class AEReadingListTableViewController: UITableViewController {
         
         let author = cellData["author"]!.uppercaseString
         cell.author.text = "By \(author)"
-        cell.pubDate.text = cellData["date"]!
+        
+        
+        let hold: [String] = cellData["date"]!.componentsSeparatedByString("-")
+        
+        let dateComponents = NSDateComponents()
+        
+        dateComponents.year = hold[0].toInt()!
+        dateComponents.month = hold[1].toInt()!
+        dateComponents.day = hold[2].toInt()!
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d MMMM y"
+        
+        var date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        
+        cell.pubDate.text = dateFormatter.stringFromDate(date!)
+        
         
         if (cellData["emotion"] == "joy") {
             cell.emotionColor.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
