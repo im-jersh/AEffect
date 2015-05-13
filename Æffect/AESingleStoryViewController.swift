@@ -31,6 +31,26 @@ class AESingleStoryViewController: UIViewController {
         authorLabel.text = "By: \(newsAuthor)"
         dateLabel.text = "Last Update: \(newsDate)"
         newsText.text = newsStory
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let check = defaults.boolForKey("nightMode") as Bool?{
+            if check==true{
+                //println("changing stuff inside story!, in night mode")
+                self.view.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.8)
+                titleLabel.textColor = UIColor.whiteColor()
+                authorLabel.textColor = UIColor.whiteColor()
+                dateLabel.textColor = UIColor.whiteColor()
+                newsText.textColor = UIColor.whiteColor()
+            }
+            else{
+                //println("changing stuff inside story!, not in night mode")
+                self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                titleLabel.textColor = UIColor.blackColor()
+                authorLabel.textColor = UIColor.blackColor()
+                dateLabel.textColor = UIColor.blackColor()
+                newsText.textColor = UIColor.blackColor()
+            }
+        }
+
         //newsImageView.image = UIImage(named: newsImage)
         
        

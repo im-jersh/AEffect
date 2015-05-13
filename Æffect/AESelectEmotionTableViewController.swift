@@ -72,7 +72,14 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         
+        
+        if let check = defaults.boolForKey("nightMode") as Bool?{
+            println("Check on load" + "\(check)")
+            self.tableView.reloadData()
+        }
         storiesfear.load(urlStringFear) {
             (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
@@ -156,7 +163,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         self.pull_action?.scrollViewDidScroll()
     }
-    
+    func loadList(notification: NSNotification){
+        //load data here
+        self.tableView.reloadData()
+    }
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         self.pull_action?.scrollViewDidEndDragging()
     }
@@ -407,7 +417,23 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         if let cellData = stories.story[indexPath.row] as AEStory? {
         
-        
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let cellData = stories.story[indexPath.row]
+            if let check = defaults.boolForKey("nightMode") as Bool?{
+                println("Check on load" + "\(check)")
+                if(check==true){
+                    cell.backgroundColor = UIColor(red: 0.147, green: 0.147, blue: 0.147, alpha: 0.8)
+                    cell.headline.textColor = UIColor.whiteColor()
+                    cell.author.textColor = UIColor.whiteColor()
+                    cell.pubDate.textColor = UIColor.whiteColor()
+                }
+                else{
+                    cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
+                    cell.headline.textColor = UIColor.blackColor()
+                    cell.author.textColor = UIColor.blackColor()
+                    cell.pubDate.textColor = UIColor.blackColor()
+                }
+            }
         // Configure the cell...
         
         //this line is important if user Scroll the table view to fast, and the image will be replaced with other image, however, this line will set the image as a blank image if user Scroll to fast

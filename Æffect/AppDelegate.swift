@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if !NSUserDefaults.standardUserDefaults().boolForKey("isNotFirstLaunch") {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "autoAdjustSettings")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isNotFirstLaunch")
+            
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         // Override point for customization after application launch.
         return true
     }
