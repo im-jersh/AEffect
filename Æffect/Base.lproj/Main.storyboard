@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ydV-9L-KCW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ydV-9L-KCW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -309,7 +309,9 @@
                             <constraint firstAttribute="trailing" secondItem="qXQ-06-xls" secondAttribute="trailing" id="trQ-37-ask"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kfm-OI-X8F"/>
+                    <navigationItem key="navigationItem" id="Kfm-OI-X8F">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="CcV-4H-dE3"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="yks-qR-Agi" id="OSd-lN-91T"/>
                         <outlet property="dateLabel" destination="tgQ-rR-hdI" id="EwX-Uj-YgO"/>
@@ -416,7 +418,10 @@
                             <constraint firstItem="Hk9-6d-P0C" firstAttribute="leading" secondItem="SqT-tA-UgJ" secondAttribute="leading" id="qSB-v7-c8d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="30Q-mh-MNd"/>
+                    <navigationItem key="navigationItem" id="30Q-mh-MNd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="YPC-PK-4bb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="8ii-Pp-Azq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="Ort-Ee-71N" id="Mrg-z3-44Z"/>
                         <outlet property="dateLabel" destination="Ez1-B7-VSL" id="OtA-yq-qFb"/>
