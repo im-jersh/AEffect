@@ -126,31 +126,37 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             if defaultEmontion == "anger" {
                 self.stories = self.storiesanger
                 verydefault = "anger"
+                currentEmotionColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
             }
             else if defaultEmontion == "surprise" {
                 self.stories = self.storiessuprise
                 verydefault = "surprise"
+                currentEmotionColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
             }
             else if (defaultEmontion == "sadness") {
                 println("1")
                 self.stories = self.storiessadness
                 verydefault = "sadness"
+                currentEmotionColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
             }
             else if defaultEmontion == "worried" {
                 self.stories = self.storiesworried
                 verydefault = "worried"
+                currentEmotionColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
             }
             else if defaultEmontion == "fear" {
                 self.stories = self.storiesfear
                 verydefault = "fear"
+                currentEmotionColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
             }
             else {
                 self.stories = self.storieshappy
                 verydefault = "happy"
+                currentEmotionColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
             }
             self.tableView.reloadData()
             
-            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "loadList:", userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1.8, target: self, selector: "loadList:", userInfo: nil, repeats: false)
 
         }
 
