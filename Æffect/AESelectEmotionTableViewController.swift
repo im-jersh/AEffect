@@ -538,6 +538,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
                     destination.newsStory = newsH.content_without_tags
                     destination.newsDate = newsH.pubdate
                     destination.newsAuthor = newsH.author
+                    destination.storyURL =  newsH.article_url
                     destination.title = self.title
                     
                     let cell = sender as! UITableViewCell
