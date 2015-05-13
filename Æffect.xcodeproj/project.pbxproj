@@ -33,7 +33,6 @@
 		03E83D4F1ABCE181001B3736 /* _ffectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4E1ABCE181001B3736 /* _ffectTests.swift */; };
 		03E83D5F1ABCF007001B3736 /* AETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */; };
 		1324FCD61AE7134E00ED490A /* AEPull.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1324FCD51AE7134E00ED490A /* AEPull.plist */; };
-		133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5531AE0425E007A8D01 /* AEStory.swift */; };
 		133DC5561AE04278007A8D01 /* AEStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5551AE04278007A8D01 /* AEStories.swift */; };
 		133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133DC5571AE044D9007A8D01 /* AETestData.swift */; };
 		136F1A961AE5D67500222350 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 136F1A761AE5D67500222350 /* MKAnnotationView+WebCache.m */; };
@@ -70,6 +69,10 @@
 		13D9086D1AF9AA4200DF5355 /* AEStoryAnger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
+		9D0606541AFEA8C300AD82D4 /* AEReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D0606531AFEA8C300AD82D4 /* AEReadingList.json */; };
+		9D8C20A21AFFEFB3009D9B30 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */; };
+		9D8DDDB21B02E52600D879E7 /* AEReadingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */; };
+		9DCBC48A1B030AFB00D61A4D /* GammaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +118,6 @@
 		03E83D4E1ABCE181001B3736 /* _ffectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ffectTests.swift; sourceTree = "<group>"; };
 		03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AETableViewCell.swift; path = ../AETableViewCell.swift; sourceTree = "<group>"; };
 		1324FCD51AE7134E00ED490A /* AEPull.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AEPull.plist; sourceTree = "<group>"; };
-		133DC5531AE0425E007A8D01 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
 		133DC5551AE04278007A8D01 /* AEStories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStories.swift; sourceTree = "<group>"; };
 		133DC5571AE044D9007A8D01 /* AETestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AETestData.swift; sourceTree = "<group>"; };
 		136F1A751AE5D67500222350 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -171,6 +173,10 @@
 		13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryAnger.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
+		9D0606531AFEA8C300AD82D4 /* AEReadingList.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; name = AEReadingList.json; path = "/Users/lmwv2c/Desktop/reading-list-archive/Æffect/AEReadingList.json"; sourceTree = "<absolute>"; };
+		9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
+		9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AEReadingList.xcdatamodel; sourceTree = "<group>"; };
+		9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GammaHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,8 @@
 		03E83D351ABCE181001B3736 /* Æffect */ = {
 			isa = PBXGroup;
 			children = (
+				9D8C209F1AFFEFB3009D9B30 /* Data */,
+				9D0606521AFEA87E00AD82D4 /* Resources */,
 				1324FCD51AE7134E00ED490A /* AEPull.plist */,
 				13D9085F1AF9A61B00DF5355 /* AEStory */,
 				13D908581AF9A1A200DF5355 /* AEStories */,
@@ -255,7 +263,6 @@
 				03231C9E1ADEF46000A9231C /* AESelectEmotionTableViewController.swift */,
 				03231C9C1ADEEB5700A9231C /* AEReadingListTableViewController.swift */,
 				03A1AE141AE61A4C0094BB56 /* AESettingsViewController.swift */,
-				133DC5531AE0425E007A8D01 /* AEStory.swift */,
 				133DC5551AE04278007A8D01 /* AEStories.swift */,
 				13ADDD231ACC8E11007B8E60 /* AESingleStoryViewController.swift */,
 				03E83D5E1ABCF007001B3736 /* AETableViewCell.swift */,
@@ -268,6 +275,7 @@
 				03E83D361ABCE181001B3736 /* Supporting Files */,
 				13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */,
 				133DC5571AE044D9007A8D01 /* AETestData.swift */,
+				9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */,
 			);
 			path = "Æffect";
 			sourceTree = "<group>";
@@ -375,6 +383,23 @@
 			name = AEStory;
 			sourceTree = "<group>";
 		};
+		9D0606521AFEA87E00AD82D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9D0606531AFEA8C300AD82D4 /* AEReadingList.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9D8C209F1AFFEFB3009D9B30 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */,
+				9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +491,7 @@
 				0333121A1ACDAFD2008E5309 /* menendez.png in Resources */,
 				1324FCD61AE7134E00ED490A /* AEPull.plist in Resources */,
 				033312171ACDAFD2008E5309 /* arkansas.png in Resources */,
+				9D0606541AFEA8C300AD82D4 /* AEReadingList.json in Resources */,
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
 				036743371AE0329F005D8A10 /* Images.xcassets in Resources */,
@@ -501,7 +527,6 @@
 				133DC5581AE044D9007A8D01 /* AETestData.swift in Sources */,
 				136F1A9E1AE5D67500222350 /* SDWebImagePrefetcher.m in Sources */,
 				136F1A9D1AE5D67500222350 /* SDWebImageManager.m in Sources */,
-				133DC5541AE0425E007A8D01 /* AEStory.swift in Sources */,
 				13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */,
 				13D9085E1AF9A1F200DF5355 /* AEStoriesAnger.swift in Sources */,
 				136F1AA41AE5D67500222350 /* UIImageView+WebCache.m in Sources */,
@@ -531,7 +556,10 @@
 				136F1A971AE5D67500222350 /* NSData+ImageContentType.m in Sources */,
 				13D9086B1AF9AA1800DF5355 /* AEStoryWorried.swift in Sources */,
 				13D908631AF9A9C100DF5355 /* AEStoryFear.swift in Sources */,
+				9D8DDDB21B02E52600D879E7 /* AEReadingList.xcdatamodeld in Sources */,
+				9D8C20A21AFFEFB3009D9B30 /* AEStory.swift in Sources */,
 				139B27901AE6285F00707ECC /* CBStoreHouseRefreshControl.m in Sources */,
+				9DCBC48A1B030AFB00D61A4D /* GammaHandler.swift in Sources */,
 				139B278F1AE6285F00707ECC /* BarItem.m in Sources */,
 				0383C63A1AC4FFD100B27904 /* DWBubbleMenuButton.m in Sources */,
 				03A1AE151AE61A4C0094BB56 /* AESettingsViewController.swift in Sources */,
@@ -754,6 +782,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */,
+			);
+			currentVersion = 9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */;
+			path = AEReadingList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 03E83D2B1ABCE180001B3736 /* Project object */;
 }
