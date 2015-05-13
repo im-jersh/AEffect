@@ -69,7 +69,6 @@
 		13D9086D1AF9AA4200DF5355 /* AEStoryAnger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */; };
 		13F844E91ACCFEF300C3F1DF /* HCTempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */; };
 		13FEA8611AE0600B008466C7 /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA8601AE0600B008466C7 /* noimage.jpg */; };
-		9D0606541AFEA8C300AD82D4 /* AEReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D0606531AFEA8C300AD82D4 /* AEReadingList.json */; };
 		9D8C20A21AFFEFB3009D9B30 /* AEStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */; };
 		9D8DDDB21B02E52600D879E7 /* AEReadingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D8DDDB01B02E52600D879E7 /* AEReadingList.xcdatamodeld */; };
 		9DCBC48A1B030AFB00D61A4D /* GammaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */; };
@@ -173,7 +172,6 @@
 		13D9086C1AF9AA4200DF5355 /* AEStoryAnger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStoryAnger.swift; sourceTree = "<group>"; };
 		13F844E81ACCFEF300C3F1DF /* HCTempfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTempfile.swift; sourceTree = "<group>"; };
 		13FEA8601AE0600B008466C7 /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
-		9D0606531AFEA8C300AD82D4 /* AEReadingList.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; name = AEReadingList.json; path = "/Users/lmwv2c/Desktop/reading-list-archive/Æffect/AEReadingList.json"; sourceTree = "<absolute>"; };
 		9D8C20A01AFFEFB3009D9B30 /* AEStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEStory.swift; sourceTree = "<group>"; };
 		9D8DDDB11B02E52600D879E7 /* AEReadingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AEReadingList.xcdatamodel; sourceTree = "<group>"; };
 		9DCBC4891B030AFB00D61A4D /* GammaHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GammaHandler.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				9D8C209F1AFFEFB3009D9B30 /* Data */,
-				9D0606521AFEA87E00AD82D4 /* Resources */,
 				1324FCD51AE7134E00ED490A /* AEPull.plist */,
 				13D9085F1AF9A61B00DF5355 /* AEStory */,
 				13D908581AF9A1A200DF5355 /* AEStories */,
@@ -383,14 +380,6 @@
 			name = AEStory;
 			sourceTree = "<group>";
 		};
-		9D0606521AFEA87E00AD82D4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9D0606531AFEA8C300AD82D4 /* AEReadingList.json */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		9D8C209F1AFFEFB3009D9B30 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,7 +480,6 @@
 				0333121A1ACDAFD2008E5309 /* menendez.png in Resources */,
 				1324FCD61AE7134E00ED490A /* AEPull.plist in Resources */,
 				033312171ACDAFD2008E5309 /* arkansas.png in Resources */,
-				9D0606541AFEA8C300AD82D4 /* AEReadingList.json in Resources */,
 				03635AC51ABE237700ECE937 /* facebook.png in Resources */,
 				03E83D431ABCE181001B3736 /* LaunchScreen.xib in Resources */,
 				036743371AE0329F005D8A10 /* Images.xcassets in Resources */,
