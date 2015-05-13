@@ -20,6 +20,7 @@ class AEStory: NSObject {
     //var article_url: String
     //var content_with_tags: String
     var content_without_tags: String
+    var alreadyRead: Bool
     /*
     var anger:
     var surprise: String
@@ -45,6 +46,7 @@ class AEStory: NSObject {
         //self.article_url = article_url
         //self.content_with_tags = content_with_tags
         self.content_without_tags = content_without_tags
+        self.alreadyRead = false
         /*
         let anger: String
         let surprise: String
