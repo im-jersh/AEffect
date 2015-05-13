@@ -63,7 +63,7 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
     var storiesworried: AEStories = AEStories()
     var storiesanger: AEStories = AEStories()
     
-    
+    var verydefault = ""
     
     ////////////////////////////////////////////////////////////////////////////////////////
     
@@ -75,9 +75,10 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         
         if let check = defaults.boolForKey("nightMode") as Bool?{
-            println("Check on load" + "\(check)")
+            println("Check on load " + "\(check)")
             self.tableView.reloadData()
         }
+        
         storiesfear.load(urlStringFear) {
             (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
@@ -117,11 +118,45 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
             (news, errorString) -> Void in
             if let unwrappedErrorString = errorString {
                 println(unwrappedErrorString)
-            } else {
-                self.stories = self.storieshappy
-                self.tableView.reloadData()
             }
         }
+        
+        if let defaultEmontion = defaults.stringForKey("emotion") {
+            println(defaultEmontion)
+            if defaultEmontion == "anger" {
+                self.stories = self.storiesanger
+                verydefault = "anger"
+            }
+            else if defaultEmontion == "surprise" {
+                self.stories = self.storiessuprise
+                verydefault = "surprise"
+            }
+            else if (defaultEmontion == "sadness") {
+                println("1")
+                self.stories = self.storiessadness
+                verydefault = "sadness"
+            }
+            else if defaultEmontion == "worried" {
+                self.stories = self.storiesworried
+                verydefault = "worried"
+            }
+            else if defaultEmontion == "fear" {
+                self.stories = self.storiesfear
+                verydefault = "fear"
+            }
+            else {
+                self.stories = self.storieshappy
+                verydefault = "happy"
+            }
+            self.tableView.reloadData()
+            
+            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "loadList:", userInfo: nil, repeats: false)
+
+        }
+
+        
+        
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -280,13 +315,63 @@ class AESelectEmotionTableViewController: UITableViewController, UITableViewData
         
         //Hang CUI April/20/2015
         //change default Æ buttom to 😄 buttom
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-        self.title = emotionArray[0].capitalizedString
-        label.text = "😄"
-        label.textAlignment = NSTextAlignment.Center
-        label.layer.cornerRadius = label.frame.size.height / 2.0
-        label.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
-        label.clipsToBounds = true
+        if verydefault == "happy" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+            self.title = emotionArray[0].capitalizedString
+            label.text = "😄"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+            label.clipsToBounds = true
+        }
+        
+        if verydefault == "surprise" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.925, green: 0.776, blue: 0.184, alpha: 0.8)
+            self.title = emotionArray[1].capitalizedString
+            label.text = "😳"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.173, alpha: 0.8)
+            label.clipsToBounds = true
+        }
+        
+        if verydefault == "sadness" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+            self.title = emotionArray[2].capitalizedString
+            label.text = "😢"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.039, green: 0.510, blue: 0.663, alpha: 0.8)
+            label.clipsToBounds = true
+        }
+        if verydefault == "worried" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+            self.title = emotionArray[3].capitalizedString
+            label.text = "😒"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.494, green: 0.298, blue: 0.631, alpha: 0.8)
+            label.clipsToBounds = true
+        }
+        if verydefault == "fear" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+            self.title = emotionArray[4].capitalizedString
+            label.text = "😖"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.871, green: 0.000, blue: 0.286, alpha: 0.8)
+            label.clipsToBounds = true
+        }
+    
+        if verydefault == "anger" {
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+            self.title = emotionArray[5].capitalizedString
+            label.text = "😠"
+            label.textAlignment = NSTextAlignment.Center
+            label.layer.cornerRadius = label.frame.size.height / 2.0
+            label.backgroundColor = UIColor(red: 0.914, green: 0.439, blue: 0.118, alpha: 0.8)
+            label.clipsToBounds = true
+        }
         
         return label
     }
